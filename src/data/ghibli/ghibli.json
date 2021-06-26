@@ -1296,16 +1296,7 @@
           "hair_color": "White",
           "specie": "Witch"
         },
-        {
-          "id": "68c4b603-0b31-43dc-b869-a1aa00528b7e",
-          "name": "Zeniba",
-          "img": "https://static.wikia.nocookie.net/studio-ghibli/images/d/d8/Zeniba.png",
-          "gender": "Female",
-          "age": "Elder",
-          "eye_color": "Dark brown",
-          "hair_color": "White",
-          "specie": "Witch"
-        },
+      
         {
           "id": "0588017a-8113-43cd-9025-518c9c0d5111",
           "name": "Akio Ogino",

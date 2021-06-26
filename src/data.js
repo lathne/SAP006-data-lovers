@@ -1,6 +1,6 @@
 
 export const filterData = (data, prop, name)=> {
-  const filter = data.filter(films=> films[prop]===name)
+  const filter = data.filter(obj=> obj[prop]===name)
   return filter;
 };
 

@@ -112,21 +112,20 @@ order.addEventListener("change", (event) => {
 
 
 //lista só de diretores
-const directorsList = () => {
+const directorsList = (filmsList) => {
   let directors = []
-  for (let film of films) {
+  for (let film of filmsList) {
     let director = film.director
     directors.push(director)
   }
   return directors
 }
 
-const setDirectors = [...new Set(directorsList())]
+const setDirectors = [...new Set(directorsList(films))]
 const arrayDirectors = Array.from(setDirectors)
 
 const directorFilter = document.getElementById("director-list")
 
-console.log(arrayDirectors)
 
 arrayDirectors.forEach(director => {
   directorFilter.innerHTML += `<option value=${director} class="director">${director}</option>`
@@ -135,16 +134,16 @@ arrayDirectors.forEach(director => {
 
 //lista só de produtores
 
-const producersList = () => {
+const producersList = (filmsList) => {
   let producers = []
-  for (let film of films) {
+  for (let film of filmsList) {
     let producer = film.producer
     producers.push(producer)
   }
   return producers
 }
 
-const setproducers = [...new Set(producersList())]
+const setproducers = [...new Set(producersList(films))]
 const arrayProducers = Array.from(setproducers)
 console.log(arrayProducers)
 
@@ -170,62 +169,6 @@ filter.addEventListener("change", (event) => {
   event.preventDefault()
 
 })
-
-
-
-
-
-
-//lista de todas as personagens femininas
-const femaleTotal = () => {
-  let female = []
-  let peopleList
-  for (let film of films) {
-    peopleList = film.people
-    for (let people of peopleList) {
-      if (people.gender == "Female") {
-        female.push(people)
-      }
-    }
-  }
-  return female
-}
-
-//lista de personagens feminias por filme
-const femalePerFilm = () => {
-  let femaleList = []
-  for (let film of films) {
-    let thisFilm = []
-    let peopleList = film.people
-    for (let people of peopleList) {
-      if (people.gender == "Female") {
-        thisFilm.push(people)
-      }
-    }
-    femaleList.push(thisFilm)
-  }
-  return femaleList
-}
-
-
-const scores = (dataFilms) => {
-  let scoreFilms = []
-  for (let film of dataFilms) {
-    let scoreNumber = parseInt(film["rt_score"])
-    scoreFilms.push(scoreNumber)
-  }
-  return scoreFilms
-}
-
-//console.log(scores(films))
-//console.log(average(scores(films)))
-
-//console.log(femalePerFilm())
-
-
-//films.filter(value => value['people']['gender']=='female')
-// console.log(femalePeople()
-
 
 
 

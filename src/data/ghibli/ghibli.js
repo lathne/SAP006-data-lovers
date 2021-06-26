@@ -748,16 +748,6 @@ export default {
           "specie": "Human"
         },
         {
-          "id": "1f24edca-65cf-4268-afe8-61e2c2afa5af",
-          "name": "Capo",
-          "img": "https://static.wikia.nocookie.net/studio-ghibli/images/9/98/Aiuto_Gang_boss.jpg",
-          "gender": "Male",
-          "age": "Adult",
-          "eye_color": "Black",
-          "hair_color": "Bald",
-          "specie": "Human"
-        },
-        {
           "id": "5fd7416f-d928-4ebc-a4fb-d9bbdf99b06a",
           "name": "Ferrari",
           "img": "https://static.wikia.nocookie.net/studio-ghibli/images/b/be/Porco_Rosso_-_Ferrari.jpg",
