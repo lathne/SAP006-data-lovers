@@ -2,7 +2,8 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Filmes</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filmes - Studio Ghibli para mulheres</title>
     <link rel="stylesheet" href="./movies.css"/>
   </head>
   <body>
@@ -27,7 +28,7 @@
       <h2 class="page-title">Filmes</h2>
 
       <section class="sort-filter">  
-        <form class="sort">
+        <form class="sort filter-block">
 
           <label for="order" class="labelForm"><button class="button-menu" id="orderSelect">Ordenar</button></label>
           <select class="dropdown-menu" name="order" id="order">
@@ -51,7 +52,7 @@
         
         </form>
 
-        <form class="filter">
+        <form class="filter filter-block">
 
           <label for="filter-choice" class="labelForm"><button class="button-menu" id="filterSelect">Filtrar</button></label>
           <select class="dropdown-menu" name="filter-choice" id="filter">
@@ -120,7 +121,7 @@
 
     </main>
 
-    <script src="main.js" type="module"></script>
+    <script src="movie.js" type="module"></script>
     
   </body>
 </html>

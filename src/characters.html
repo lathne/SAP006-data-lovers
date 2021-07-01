@@ -2,7 +2,8 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Personagens</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personagens - Studio Ghibli para mulheres</title>
     <link rel="stylesheet" href="./characters.css" />
   </head>
 
@@ -26,9 +27,15 @@
 
   <main class="characters-page">
     <h2 class="page-title">Personagens</h2>
-    <button class="button-menu" id="filter-btn">Filtrar</button>
+    <div class="filter-div"> 
+      <label for="filter-btn" class="filter-label">FILTRAR</label>
+      <button class="button-menu" id="filter-btn"><img src="img/filter.png"></button>
+
+    </div>
+    
+   
     <form class="filter" id="filter">
-      <label for="filter-gender">Gênero</label>
+      <label for="filter-gender" class="label">Gênero</label>
       <select class="dropdown-menu" name="filter-choice" id="filter-gender">
         <option value="All">Todos</option>
         <option value="Female">Feminino</option>
@@ -36,7 +43,7 @@
         
       </select>
 
-      <label for="filter-movie">Filme</label>
+      <label for="filter-movie" class="label">Filme</label>
       <select class="dropdown-menu" name="filter-choice" id="filter-movie">
         <option value="All">Todos</option>
         
