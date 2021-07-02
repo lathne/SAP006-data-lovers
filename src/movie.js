@@ -20,13 +20,14 @@ const printMovieList = (movieList) => {
     
       <section class="movie-details" id="movie-details">
         <div class="movie-headline" id="movie-headline">
+          
           <div class="container-title">
             <h3 class="movie-title" id="movie-title">${film.title}</h3>
             <h5 class="release-date" id="release-date">${film.release_date}</h5>
           </div>
     
           <figure class="score">
-            <img class="star" src="img/star.png" alt="">
+            <img class="star" src="img/rate.png" alt="">
             <span class="rt-score">${film.rt_score}</span>
           </figure>
          </div>
@@ -37,8 +38,8 @@ const printMovieList = (movieList) => {
             <img src=${film.people[0].img} alt="" class="character-picture">
             <img src=${film.people[1].img} alt="" class="character-picture">
             <img src=${film.people[2].img} alt="" class="character-picture">
-            <img src=${film.people[3].img} alt="" class="character-picture">
-            <button class="more-characters">Ver mais</button>
+            <img src=${film.people[3].img} alt="" class="character-picture picture-4">
+            <button class="more-characters"><img class="see-more" src="img/more-than.png" alt="">Ver todos</button>
           </div>
         </div>
   

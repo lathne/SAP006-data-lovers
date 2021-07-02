@@ -95,7 +95,7 @@ body {
   text-decoration: none;
   color: white;
   font-weight: 800;
-  font-size: 2rem;
+  font-size: 1.7rem;
  
 }
 
@@ -166,6 +166,11 @@ body {
   .list {
     justify-content:space-between;
   }
+
+  .links {
+    font-size: 2rem;
+  }
+
 
   .page-title{
     font-size:3.5rem;
