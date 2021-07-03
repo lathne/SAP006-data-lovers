@@ -23,41 +23,51 @@ const printMovieList = (movieList) => {
       </figure>
     
       <section class="movie-details" id="movie-details">
-        <div class="movie-headline" id="movie-headline">
-          
-          <div class="container-title">
-            <h3 class="movie-title" id="movie-title">${film.title}</h3>
-            <h5 class="release-date" id="release-date">${film.release_date}</h5>
-          </div>
-    
-          <figure class="score">
-            <img class="star" src="img/rate.png" alt="">
-            <span class="rt-score">${film.rt_score}</span>
+        <div class="master-details">
+          <figure class="movie-poster-mobile">
+            <img class="poster-mobile" src=${film.poster} alt="">
           </figure>
-         </div>
-    
-        <div class="details" id="characters">
-          <h4 class="detail-title">Personagens</h4>
-          <div class="images">
-            <img src=${film.people[0].img} alt="" class="character-picture">
-            <img src=${film.people[1].img} alt="" class="character-picture">
-            <img src=${film.people[2].img} alt="" class="character-picture">
-            <img src=${film.people[3].img} alt="" class="character-picture picture-4">
-            <button class="more-characters" id=${film.id}><img class="see-more" src="img/more-than.png" alt="">Ver todos</button>
+
+          <div class="container-movie-header">
+            <div class="movie-headline" id="movie-headline">
+              
+              <div class="container-title">
+                <h3 class="movie-title" id="movie-title">${film.title}</h3>
+                <h5 class="release-date" id="release-date">${film.release_date}</h5>
+              </div>
+        
+              <figure class="score">
+                <img class="star" src="img/rate.png" alt="">
+                <span class="rt-score">${film.rt_score}</span>
+              </figure>
+            </div>
+
+          
+
+            <div class="details" id="characters">
+              <h4 class="detail-title">Personagens</h4>
+              <div class="images">
+                <img src=${film.people[0].img} alt="" class="character-picture">
+                <img src=${film.people[1].img} alt="" class="character-picture">
+                <img src=${film.people[2].img} alt="" class="character-picture">
+                <img src=${film.people[3].img} alt="" class="character-picture picture-4">
+                <button class="more-characters" id=${film.id}><img class="see-more" src="img/more-than.png" alt="">Ver todos</button>
+              </div>
+            </div>
           </div>
         </div>
-  
-        <div class="details" id="synopsis">
+      
+        <div class="details text-mobile" id="synopsis">
           <h4 class="detail-title" id="synopsis-title">Sinopse</h4>
           <p class="detail-text">${film.description}</p>
         </div>
   
-        <div class="details" id="director">
+        <div class="details  text-mobile" id="director">
           <h4 class="detail-title">Diretor</h4>
           <p class="detail-text">${film.director}</p>
         </div>
   
-        <div class="details" id="producer">
+        <div class="details  text-mobile" id="producer">
           <h4 class="detail-title">Produtor</h4>
           <p class="detail-text">${film.producer}</p>
         </div>
@@ -71,17 +81,14 @@ const printMovieList = (movieList) => {
 
 printMovieList(films)
 
-
-const orderSelect =document.getElementById("orderSelect")
 const order = document.getElementById("order")
 const orderBtn = document.getElementById("order-btn")
 
-const filterSelect= document.getElementById("filterSelect")
 const filter = document.getElementById("filter")
 const filterBtn = document.getElementById("filter-btn")
 
-//Revelando caixa select ordenação
-orderSelect.addEventListener("click",(event)=>{
+
+orderBtn.addEventListener("click",(event)=>{
   order.style.display="inline-block"
   filter.style.display="none"
   event.preventDefault()
@@ -90,7 +97,7 @@ orderSelect.addEventListener("click",(event)=>{
 
 
 //revelando caixa select filtro
-filterSelect.addEventListener("click",(event)=>{
+filterBtn.addEventListener("click",(event)=>{
   filter.style.display="inline-block"
   order.style.display="none"
   event.preventDefault()
@@ -205,13 +212,18 @@ window.addEventListener('DOMContentLoaded', () =>{
 
       modal.classList.add("mostrar")
      
-
-
-
       modalBtn.addEventListener("click", ()=>{
         modal.classList.remove("mostrar")
         characterContainer.innerHTML=""
-        
+      })
+
+      modal.addEventListener("click",(event)=>{
+        if(event.target.id == "modal-characters"){
+          modal.classList.remove("mostrar")
+          characterContainer.innerHTML=""
+          
+        }
+
       })
       
       
@@ -219,3 +231,17 @@ window.addEventListener('DOMContentLoaded', () =>{
     }))
   
 })
+
+
+var comboGoogleTradutor = null; //Varialvel global
+
+function googleTranslateElementInit() {
+    new google.translate.TranslateElement({
+        pageLanguage: 'pt',
+        includedLanguages: 'en,pt',
+        layout: google.translate.TranslateElement.InlineLayout.HORIZONTAL
+    }, 'google_translate_element');
+
+    comboGoogleTradutor = document.getElementById("google_translate_element").querySelector(".goog-te-combo");
+}
+
