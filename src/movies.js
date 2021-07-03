@@ -2,16 +2,20 @@ import { filterData } from './data.js'
 import { sortData } from './data.js';
 import { average } from './data.js';
 
+
 import data from './data/ghibli/ghibli.js'
 
 const films = data.films
 
 const containerMovies = document.getElementById("container-movies")
 
+
+
+
 const printMovieList = (movieList) => {
   movieList.forEach(film => {
     containerMovies.innerHTML += `  
-    <section class="movie">                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               
+    <section class="movie" id=${film.id} >                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               
       
       <figure class="movie-poster">
         <img class="poster" src=${film.poster} alt="">
@@ -39,7 +43,7 @@ const printMovieList = (movieList) => {
             <img src=${film.people[1].img} alt="" class="character-picture">
             <img src=${film.people[2].img} alt="" class="character-picture">
             <img src=${film.people[3].img} alt="" class="character-picture picture-4">
-            <button class="more-characters"><img class="see-more" src="img/more-than.png" alt="">Ver todos</button>
+            <button class="more-characters" id=${film.id}><img class="see-more" src="img/more-than.png" alt="">Ver todos</button>
           </div>
         </div>
   
@@ -146,7 +150,6 @@ const producersList = (filmsList) => {
 
 const setproducers = [...new Set(producersList(films))]
 const arrayProducers = Array.from(setproducers)
-console.log(arrayProducers)
 
 const producerFilter = document.getElementById("producer-list")
 arrayProducers.forEach(producer => {
@@ -173,3 +176,46 @@ filter.addEventListener("change", (event) => {
 
 
 
+
+
+
+window.addEventListener('DOMContentLoaded', () =>{
+  const seeMoreBtns = document.querySelectorAll(".more-characters")
+  seeMoreBtns.forEach(btn =>
+    btn.addEventListener("click", (event) =>{
+      const idMovie = event.currentTarget.id
+      const movieSelected = films.find(film => film.id == idMovie)
+      const peopleOfMovieSelected = movieSelected.people
+      const modal = document.getElementById("modal-characters")
+      const modalBtn = document.getElementById("modal-btn")
+      const modalTitle =document.getElementById("modal-title")
+
+      const characterContainer = document.getElementById("characters-container")
+      modalTitle.innerText=`Personagens de ${movieSelected.title}`
+
+      peopleOfMovieSelected.forEach(people =>{
+        characterContainer.innerHTML+=`
+        <div  class="character">
+            <img class="image-modal" src="${people.img}" alt="">
+            <p class="name-modal">${people.name}</p>
+        </div>     
+        `
+
+      })
+
+      modal.classList.add("mostrar")
+     
+
+
+
+      modalBtn.addEventListener("click", ()=>{
+        modal.classList.remove("mostrar")
+        characterContainer.innerHTML=""
+        
+      })
+      
+      
+
+    }))
+  
+})

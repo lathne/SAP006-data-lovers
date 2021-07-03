@@ -9,7 +9,7 @@ const films = data.films
 
 
 const gallery = document.getElementById("gallery")
-const printPeople = (peopleList, film)=>{
+export const printPeople = (peopleList, film)=>{
   peopleList.forEach(people=> {
     gallery.innerHTML += 
     ` 
@@ -143,6 +143,7 @@ filterMovie.addEventListener("change", ()=>{
     }
   }  
 })
+
 
 
 
