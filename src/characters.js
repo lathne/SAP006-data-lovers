@@ -11,33 +11,35 @@ const films = data.films
 const gallery = document.getElementById("gallery")
 const printPeople = (peopleList, film)=>{
   console.log(peopleList)
-  let x = ''
+  let charactersCards = ''
   peopleList.forEach(people=> {
-    x += 
+    charactersCards += 
     ` 
     <div class="card">
       <div class="card-inner">
         <div class="card-front">
           <img src=${people.img} class="card-img" alt="Imagem do personagem" >
-          <h5>${people.name}</h5>
+          <div class="div-name">
+            <h5 class="people-name">${people.name}</h5>
+          </div>
         </div>
           <div class="card-back">
             <h1 class="name-character">${people.name}</h1>
             <h2 class="item-character">Filme:</h2>
-            <p class="movie-name">${film}</p>
+            <p class="movie-name card-text">${film}</p>
             <h2 class="item-character">Gênero:</h2>
-            <p >${people.gender}</p>
+            <p class="card-text">${people.gender}</p>
             <h2 class="item-character">Idade:</h2>
-            <p>${people.age}</p>
+            <p class="card-text">${people.age}</p>
             <h2 class="item-character">Espécie:</h2>
-            <p>${people.specie}</p>
+            <p class="card-text">${people.specie}</p>
           </div>  
         </div>
     </div> 
   `
   })
-  console.log(x)
-  gallery.innerHTML += x
+  console.log(charactersCards)
+  gallery.innerHTML += charactersCards
 }
 
 
@@ -50,7 +52,7 @@ const filterBtn = document.getElementById("filter-btn")
 const filter = document.getElementById("filter")
 
 filterBtn.addEventListener("click",(event)=>{
-  filter.style.display="inline-block"
+  filter.classList.toggle("filter-active")
 
   event.preventDefault()
 })
@@ -145,6 +147,7 @@ filterMovie.addEventListener("change", ()=>{
     }
   }  
 })
+
 
 
 
