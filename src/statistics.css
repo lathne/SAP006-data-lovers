@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
 
 :root {
+  
   --dark-purple:rgb(64,15,69);
   --light-purple:rgb(137,60,145);
   --dark-green:rgb(44,69,21);
@@ -29,6 +30,7 @@ body {
   font-size:1.6rem;
    
 }
+
 
 /* Header */
 
@@ -121,44 +123,6 @@ body {
   
 }
 
-
-
-@media(min-width:1500px){
-  :root{
-    font-size:1rem;
-  }
-}
-
-
-@media(max-width:1500px){
-  :root{
-    font-size:0.8rem;
-  }
-  
-}
-
-@media(max-width:1024px){
-
-
-  .header{
-    height:70vh;
-    background-image: linear-gradient(to bottom, rgba(78, 19, 85, 0.829), #2c4515d2), url('./img/header-small.png'); 
-  }
-}
-
-
-@media(max-width:768px){
-  :root{
-    font-size:0.7rem;
-  }
- 
-}
-
-@media(max-width:630px){
-  :root{
-    font-size:0.6rem;
-  }
- 
   .header{
     height:60vh;
   }
@@ -176,12 +140,7 @@ body {
     font-size:3.5rem;
     margin-top: 5%;
   }
-}
 
-@media(max-width:500px){
-  :root{
-    font-size: 0.5rem;
-  }
 
   .header{
     height:50vh;
@@ -198,20 +157,88 @@ body {
     border-bottom: 3px solid white;
   }
 
-  .list {
-    width: 90%;
-    justify-content:space-between;
+  .links:hover {
+    color: rgb(250, 190, 26);
+    transition: .3s ease-in;
   }
 
- 
+/* Charts */
+
+.main{
+  width: 90%;
+  margin: 3em auto;
+
+  display: flex;
+  flex-wrap: wrap;
 }
 
-@media(max-width:400px){
-  :root{
-    font-size: 0.4rem;
-  }
+.flex-container {
+  display: flex;
+  justify-content: center;
+  
+  width: 100%;
+
+  margin: 20px auto;
+  
+}
+
+.chart {
+  width: 80%;
+}
+
+.info {
+  height: 65%;
+  width: 20%;
+  margin: .5rem;
+  padding: .5rem;
+
+  text-align: center;
+  font-size: 1.5em;
+}
+
+.info p {
+  margin-top: .5rem;
+
+  font-size: 1.3em;
+  color: #64913c;
+}
+
+.data {
+  display: inline-block;
+  font-size: 3rem;
+  margin: .5rem;
+  padding: .3rem;
+  color: #9c4eb4;
+}
+
+
+
+
+
+/* @media(max-width:1024px){
+
+
   .header{
-    height:35vh;
-    background-image: linear-gradient(to bottom, rgba(78, 19, 85, 0.829), #2c4515d2), url('./img/header-mobile.png');
+    height:70vh;
+    background-image: linear-gradient(to bottom, rgba(78, 19, 85, 0.829), #2c4515d2), url('./img/header-small.png'); 
   }
 }
+
+
+@media(max-width:768px){
+  :root{
+    font-size:0.7rem;
+  }
+}
+
+@media(max-width:630px){
+  :root{
+    font-size:0.6rem;
+  }
+
+   @media(max-width:500px){
+  :root{
+    font-size: 0.5rem;
+  } 
+
+  */

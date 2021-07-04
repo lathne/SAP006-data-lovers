@@ -9,9 +9,11 @@ const films = data.films
 
 
 const gallery = document.getElementById("gallery")
-export const printPeople = (peopleList, film)=>{
+const printPeople = (peopleList, film)=>{
+  console.log(peopleList)
+  let charactersCards = ''
   peopleList.forEach(people=> {
-    gallery.innerHTML += 
+    charactersCards += 
     ` 
     <div class="card">
       <div class="card-inner">
@@ -36,6 +38,8 @@ export const printPeople = (peopleList, film)=>{
     </div> 
   `
   })
+  console.log(charactersCards)
+  gallery.innerHTML += charactersCards
 }
 
 

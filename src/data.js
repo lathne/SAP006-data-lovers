@@ -66,15 +66,14 @@ export const sortData = (data, sortBy, sortOrder) => {
 };
 
 
-export const numberFemale = (data) => {
-  return data.lenght;
-};
+// export const numberFemale = (data) => {
+//   return data.lenght
+// };
 
-
+//média de notas
 export const average= (data) => {
-  return data.reduce((sum, score) => sum += score, 0) / data.length;
+  return data.reduce((acum, atual) => acum + atual, 0) / data.length
 }
-
 
 
 // filterData(data, condition): esta função receberia os dados e nos retornaria os que cumprem com a condição.
