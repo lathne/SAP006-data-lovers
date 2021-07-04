@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <title>Dados</title>
     <link rel="stylesheet" href="./statistics.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   </head>
 
 <body>
@@ -23,3 +24,32 @@
       </ul>
     </nav>
   </header>
+
+  <main class="main">
+    <section class="flex-container">
+
+      <div class="chart films">
+        <canvas id="filmsTimeLineChart" class="flex-item"></canvas>
+      </div>
+
+      <div class="films info" id="totalFilms"></div>
+
+   </section>
+
+   <section class="flex-container">
+
+      <div class="scores info" id="averageScore"></div>
+
+      <div class="chart scores">
+        <canvas id="chartScores" class="flex-item"></canvas>
+      </div>
+
+   </section>
+
+    
+
+  </main>
+
+  <script src="statistics.js" type="module"></script>
+
+</body>

@@ -1,34 +1,95 @@
-//lista de personagens feminias por filme
-// const femalePerFilm = () => {
-//   let femaleList = []
-//   for (let film of films) {
-//     let thisFilm = []
-//     let peopleList = film.people
-//     for (let people of peopleList) {
-//       if (people.gender == "Female") {
-//         thisFilm.push(people)
-//       }
-//     }
-//     femaleList.push(thisFilm)
-//   }
-//   return femaleList
-// }
+import { filterData } from './data.js'
+import { sortData } from './data.js';
+import { average } from './data.js';
 
+
+import data from './data/ghibli/ghibli.js'
+
+const films = data.films
+
+//Gráficos Charts.js
+const filmTitles =  films.map(film => film.title)
+const filmScores = films.map(film => film["rt_score"])
+const filmYears = films.map(film => film["release_date"])
+
+const chartScores = document.getElementById("chartScores")
+const filmsTimeLineChart = document.getElementById("filmsTimeLineChart")
+
+new Chart(filmsTimeLineChart, {
+  type: 'line',
+  data: {
+    labels: filmTitles,
+    datasets: [{
+      label: "Linha do Tempo",
+      data: filmYears,
+      backgroundColor: "rgb(156, 78, 180, 0.5)",
+      fill: true
+    }]
+  },
+  options: {
+    responsive: true,
+    
+    }
+})
+
+new Chart(chartScores, {
+    type: 'bar',
+    data: {
+      labels: filmTitles,
+      datasets: [{
+        label: "Notas Por Filme",
+        data: filmScores,
+        backgroundColor: "rgb(41, 158, 71, 0.5)",
+        fill: true
+      }]
+    },
+    options: {
+      responsive: true,
+      scales: {
+        y: {
+          min: 40
+        }
+      }
+    }
+
+})
+
+//Total de Filmes
+
+const titles = (films) => {
+  let movieTitle = []
+  for (let film of films) {
+    let title = film.title
+    movieTitle.push(title)
+  }
+
+  const printTotalFilms = document.getElementById("totalFilms")
+  printTotalFilms.innerHTML = 
+      `<div class="flex-item">
+          <div class="box">
+              <p>Desde a década de 80 o Studio Ghibli produziu <strong class="data">${movieTitle.length}</strong> filmes</p>
+          </div>
+       </div>`
+}
+titles(films)
+
+// Média das Notas
 
 const scores = (dataFilms) => {
   let scoreFilms = []
   for (let film of dataFilms) {
     let scoreNumber = parseInt(film["rt_score"])
     scoreFilms.push(scoreNumber)
+
   }
-  return scoreFilms
+  const printAverageScore = document.getElementById("averageScore")
+  printAverageScore.innerHTML = 
+        `<div class="flex-item">
+            <div class="box">
+                <p>A média de notas dos filmes é <strong class="data">${average(scoreFilms)}</strong></p>
+            </div>
+        </div>`
 }
-
-//console.log(scores(films))
-//console.log(average(scores(films)))
-
-//console.log(femalePerFilm())
+scores(films)
 
 
-//films.filter(value => value['people']['gender']=='female')
-// console.log(femalePeople()

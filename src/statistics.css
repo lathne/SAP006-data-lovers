@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
 
 :root {
-    /* Cores  */
+  
 }
 
 * {
@@ -12,6 +12,7 @@
     font-family: 'Lato', sans-serif;;
     font-size: 100%;
 }
+
 
 /* Header */
 
@@ -85,3 +86,52 @@
     color: rgb(250, 190, 26);
     transition: .3s ease-in;
   }
+
+/* Charts */
+
+.main{
+  width: 90%;
+  margin: 3em auto;
+
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.flex-container {
+  display: flex;
+  justify-content: center;
+  
+  width: 100%;
+
+  margin: 20px auto;
+  
+}
+
+.chart {
+  width: 80%;
+}
+
+.info {
+  height: 65%;
+  width: 20%;
+  margin: .5rem;
+  padding: .5rem;
+
+  text-align: center;
+  font-size: 1.5em;
+}
+
+.info p {
+  margin-top: .5rem;
+
+  font-size: 1.3em;
+  color: #64913c;
+}
+
+.data {
+  display: inline-block;
+  font-size: 3rem;
+  margin: .5rem;
+  padding: .3rem;
+  color: #9c4eb4;
+}
