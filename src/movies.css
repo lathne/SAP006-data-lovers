@@ -32,6 +32,8 @@ body {
 
 /* Header */
 
+
+
 .header {
   height: 80vh;
   width: 100%;
@@ -228,6 +230,7 @@ body {
 
 .poster{
   width:20rem;
+  border-radius:3%;
  
 }
 
@@ -236,6 +239,7 @@ body {
   flex-direction:column;
   padding-left: 2rem;
   width:100%;
+ 
  }
 
 .movie-poster-mobile{
@@ -293,13 +297,10 @@ body {
   width:100%;
 }
 
-
-
-
 .detail-title{
-  font-size:1.2rem;
+  font-size:1.5rem;
   color:var(--light-purple);
-  margin-top:1rem;
+  margin-top:2rem;
 }
 
 #synopsis-title{
@@ -313,10 +314,18 @@ body {
   text-align: justify;
 }
 
+.team{
+  display:flex;
+  flex-wrap:nowrap;
+  width:40%;
+  justify-content: space-between;
+
+}
+
 .images{
   display:flex;
   justify-content: space-around;
-  height: 6rem;
+  height: 7rem;
   width:70%;
   align-items:center;
   object-fit: cover;
@@ -324,9 +333,9 @@ body {
 }
 
 .character-picture{
-  height:5rem;
-  width:5rem;
-  border-radius: 100%;
+  height:5.5rem;
+  width:5.5rem;
+  border-radius: 20%;
   object-fit: cover;
 }
 
@@ -369,7 +378,7 @@ body {
 }
 
 .modal{
-  width:70vw;
+  width:50vw;
   height:auto;
   max-height: 80vh;
   background-color: white;
@@ -430,9 +439,9 @@ body {
 .characters-container{
   width:100%;
   display:flex;
-  flex-wrap:wrap;
-  align-items: center;
-  justify-content: space-around;
+  flex-direction:column;
+  align-items:center;
+  text-align: center;
   padding:0 2rem;
   
  
@@ -440,10 +449,10 @@ body {
 }
 
 .character{
-  width:8rem;
-  height: 11rem;
+  width:100%;
+  height: 9rem;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: flex-start;
   align-items: center;
   text-align:center;
@@ -452,18 +461,18 @@ body {
 }
 
 .image-modal{
-  height:7rem;
-  width:7rem;
-  border-radius: 100%;
+  height:8rem;
+  width:8rem;
+  border-radius: 20%;
   object-fit: cover;
 }
 
 .name-modal{
   font-size: 1.2rem;
   font-weight: bold;
+  margin-left:2rem;
   color:var(--light-purple);
-  text-align: center;
-  margin-top:0.5rem;
+  
 }
 
 #google_translate_element{
@@ -497,6 +506,13 @@ body {
     font-size:1rem;
   }
 
+  .team{
+    width:30%;
+   
+  
+  }
+  
+
   .images{
     width:60%;
   }
@@ -515,7 +531,7 @@ body {
   }
 
   .images{
-    width:60%;
+    width:70%;
   }
 
 
@@ -529,13 +545,31 @@ body {
     background-image: linear-gradient(to bottom, rgba(78, 19, 85, 0.829), #2c4515d2), url('./img/header-small.png'); 
   }
 
+  .team{
+    width:50%;
+  
+  }
+
+  .detail-text{
+    font-size: 1rem;
+  }
+
   .images{
     width:90%;
   }
 
+  .character-picture{
+    width:5rem;
+    height:5rem;
+  }
+
+
   .picture-4{
     display:none;
   }
+
+  .modal{
+    width:60vw;
 
   
 }
@@ -546,9 +580,18 @@ body {
     font-size:0.7rem;
   }
 
+  .team{
+    width:60%;
+  
+  }
+
   .images{
     width:100%;
   }
+
+  .modal{
+    width:70vw;
+
 
   
 }
@@ -605,7 +648,7 @@ body {
     width:100%;
     display:flex;
     flex-direction: column;
-    justify-content:space-between;
+    justify-content:space-around;
 
   }
 
@@ -620,6 +663,7 @@ body {
     width:13rem;
     -webkit-transition: all 0.7s ease;
     transition: all 0.7s ease;
+    border-radius: 5%;
   }
 
   
@@ -635,12 +679,19 @@ body {
 
   .container-title{
     margin-right:1rem;
-    margin-bottom:1rem
+    margin-bottom: 0;
   }
 
   .movie-title{
     font-size:2rem;
     margin-bottom:0.5rem;
+  }
+
+  
+  .team{
+    width:100%;
+    flex-direction: column;
+  
   }
 
   .images{
@@ -672,6 +723,7 @@ body {
 
   .detail-title{
     font-size:1.7rem;
+    margin-top:0.7rem;
   }
 
   .detail-text{
@@ -736,6 +788,7 @@ body {
   }
 
   .detail-text{
+    font-size:1.5rem;
     
     line-height: 2rem;
   }
@@ -752,9 +805,21 @@ body {
     background-image: linear-gradient(to bottom, rgba(78, 19, 85, 0.829), #2c4515d2), url('./img/header-mobile.png');
   }
 
+  .images{
+   
+    height: 9rem;
+    width:100%;
+    
+    
+  }
+
   .character-picture{
-    height:5rem;
-    width:5rem;
+    height:6rem;
+    width:6rem;
+  }
+
+  .picture-4{
+    display:block;
   }
 }
 

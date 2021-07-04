@@ -41,10 +41,21 @@ const printMovieList = (movieList) => {
                 <span class="rt-score">${film.rt_score}</span>
               </figure>
             </div>
+            <div class="team">
+              <div id="director">
+                <h4 class="detail-title">Diretor</h4>
+                <p class="detail-text">${film.director}</p>
+              </div>
+    
+              <div  id="producer">
+                <h4 class="detail-title">Produtor</h4>
+                <p class="detail-text">${film.producer}</p>
+              </div> 
+            </div> 
+          </div>
+        </div>
 
-          
-
-            <div class="details" id="characters">
+        <div id="characters">
               <h4 class="detail-title">Personagens</h4>
               <div class="images">
                 <img src=${film.people[0].img} alt="" class="character-picture">
@@ -54,23 +65,12 @@ const printMovieList = (movieList) => {
                 <button class="more-characters" id=${film.id}><img class="see-more" src="img/more-than.png" alt="">Ver todos</button>
               </div>
             </div>
-          </div>
-        </div>
       
         <div class="details text-mobile" id="synopsis">
           <h4 class="detail-title" id="synopsis-title">Sinopse</h4>
           <p class="detail-text">${film.description}</p>
         </div>
-  
-        <div class="details  text-mobile" id="director">
-          <h4 class="detail-title">Diretor</h4>
-          <p class="detail-text">${film.director}</p>
-        </div>
-  
-        <div class="details  text-mobile" id="producer">
-          <h4 class="detail-title">Produtor</h4>
-          <p class="detail-text">${film.producer}</p>
-        </div>
+
       </section>
     </section>
   `
@@ -80,6 +80,55 @@ const printMovieList = (movieList) => {
 
 
 printMovieList(films)
+
+const seeMoreCharacters = () => {
+  const seeMoreBtns = document.querySelectorAll(".more-characters")
+  seeMoreBtns.forEach(btn =>
+    btn.addEventListener("click", (event) =>{
+      const idMovie = event.currentTarget.id
+      const movieSelected = films.find(film => film.id == idMovie)
+      const peopleOfMovieSelected = movieSelected.people
+      const modal = document.getElementById("modal-characters")
+      const modalBtn = document.getElementById("modal-btn")
+      const modalTitle =document.getElementById("modal-title")
+
+      const characterContainer = document.getElementById("characters-container")
+      modalTitle.innerText=`Personagens de ${movieSelected.title}`
+
+      peopleOfMovieSelected.forEach(people =>{
+        characterContainer.innerHTML+=`
+        <div  class="character">
+            <img class="image-modal" src="${people.img}" alt="">
+            <p class="name-modal">${people.name}</p>
+        </div>     
+        `
+
+      })
+      modal.classList.add("mostrar")
+     
+      modalBtn.addEventListener("click", ()=>{
+        modal.classList.remove("mostrar")
+        characterContainer.innerHTML=""
+      })
+
+      modal.addEventListener("click",(event)=>{
+        if(event.target.id == "modal-characters"){
+          modal.classList.remove("mostrar")
+          characterContainer.innerHTML=""
+          
+        }
+      })
+    }))
+}
+
+
+
+
+window.addEventListener('DOMContentLoaded', () =>{
+  seeMoreCharacters()
+  
+})
+
 
 const order = document.getElementById("order")
 const orderBtn = document.getElementById("order-btn")
@@ -112,9 +161,8 @@ order.addEventListener("change", (event) => {
   const optionValue = optionSelected.value
   const optionClass = optionSelected.getAttribute("class")
   const sortedList = sortData(films, optionClass, optionValue)
-  console.log(optionClass)
-  console.log(optionValue)
   printMovieList(sortedList)
+  seeMoreCharacters()
   event.preventDefault()
 
 })
@@ -172,60 +220,14 @@ filter.addEventListener("change", (event) => {
   const optionSelected = filter.options[filter.selectedIndex]
   const optionText = optionSelected.text
   const optionClass = optionSelected.getAttribute("class")
-  console.log(optionText, optionClass )
+
   const filteredList = filterData(films, optionClass, optionText)
-  console.log(filteredList)
   printMovieList(filteredList)
+  seeMoreCharacters()
 
   event.preventDefault()
 
 })
 
-
-
-
-
-
-window.addEventListener('DOMContentLoaded', () =>{
-  const seeMoreBtns = document.querySelectorAll(".more-characters")
-  seeMoreBtns.forEach(btn =>
-    btn.addEventListener("click", (event) =>{
-      const idMovie = event.currentTarget.id
-      const movieSelected = films.find(film => film.id == idMovie)
-      const peopleOfMovieSelected = movieSelected.people
-      const modal = document.getElementById("modal-characters")
-      const modalBtn = document.getElementById("modal-btn")
-      const modalTitle =document.getElementById("modal-title")
-
-      const characterContainer = document.getElementById("characters-container")
-      modalTitle.innerText=`Personagens de ${movieSelected.title}`
-
-      peopleOfMovieSelected.forEach(people =>{
-        characterContainer.innerHTML+=`
-        <div  class="character">
-            <img class="image-modal" src="${people.img}" alt="">
-            <p class="name-modal">${people.name}</p>
-        </div>     
-        `
-
-      })
-      modal.classList.add("mostrar")
-     
-      modalBtn.addEventListener("click", ()=>{
-        modal.classList.remove("mostrar")
-        characterContainer.innerHTML=""
-      })
-
-      modal.addEventListener("click",(event)=>{
-        if(event.target.id == "modal-characters"){
-          modal.classList.remove("mostrar")
-          characterContainer.innerHTML=""
-          
-        }
-      })
-    }))
-
-    const seePoster = document.querySelectorAll(".more-characters")
-})
 
 
