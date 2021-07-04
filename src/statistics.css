@@ -24,8 +24,8 @@ body {
   margin: 0;
   padding: 0;
   background-image: linear-gradient(to bottom,   rgba(255,255,255, 0.4),  rgba(255,255, 255, 0.4)),url('./img/background-borda.png');
-  background-repeat:repeat-y;
-  background-size:contain;
+   background-attachment: fixed;
+  background-size:100%;
   color:var(--text-color);
   font-size:1.6rem;
    
@@ -122,8 +122,6 @@ body {
   line-height: normal;
   
 }
-
-
 
   .header{
     height:60vh;

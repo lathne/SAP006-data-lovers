@@ -209,7 +209,6 @@ window.addEventListener('DOMContentLoaded', () =>{
         `
 
       })
-
       modal.classList.add("mostrar")
      
       modalBtn.addEventListener("click", ()=>{
@@ -223,25 +222,10 @@ window.addEventListener('DOMContentLoaded', () =>{
           characterContainer.innerHTML=""
           
         }
-
       })
-      
-      
-
     }))
-  
+
+    const seePoster = document.querySelectorAll(".more-characters")
 })
 
-
-var comboGoogleTradutor = null; //Varialvel global
-
-function googleTranslateElementInit() {
-    new google.translate.TranslateElement({
-        pageLanguage: 'pt',
-        includedLanguages: 'en,pt',
-        layout: google.translate.TranslateElement.InlineLayout.HORIZONTAL
-    }, 'google_translate_element');
-
-    comboGoogleTradutor = document.getElementById("google_translate_element").querySelector(".goog-te-combo");
-}
 
