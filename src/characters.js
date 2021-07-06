@@ -1,6 +1,5 @@
 import { filterData } from './data.js'
-import { sortData } from './data.js';
-import { average } from './data.js';
+
 
 import data from './data/ghibli/ghibli.js'
 
@@ -10,7 +9,7 @@ const films = data.films
 
 const gallery = document.getElementById("gallery")
 const printPeople = (peopleList, film)=>{
-  console.log(peopleList)
+
   let charactersCards = ''
   peopleList.forEach(people=> {
     charactersCards += 
@@ -18,7 +17,7 @@ const printPeople = (peopleList, film)=>{
     <div class="card">
       <div class="card-inner">
         <div class="card-front">
-          <img src=${people.img} class="card-img" alt="Imagem do personagem" >
+          <img onerror="this.src='/img.chihiro.png'" src=${people.img} class="card-img" alt="Imagem do personagem" id=${people.id} >
           <div class="div-name">
             <h5 class="people-name">${people.name}</h5>
           </div>
@@ -38,15 +37,49 @@ const printPeople = (peopleList, film)=>{
     </div> 
   `
   })
-  console.log(charactersCards)
+  
   gallery.innerHTML += charactersCards
 }
-
 
 for (let film of films) {
   let peopleList = film.people
   printPeople(peopleList, film.title)
 }
+
+
+
+const imageValidation = (filmsList) =>{
+
+  const arrayImg = []
+    for (let film of filmsList) {
+      let peopleList = film.people
+      for (let people of peopleList){
+        let imgId = people.id
+        arrayImg.push(imgId)
+    }
+  }
+
+  for(let img of arrayImg){
+    const image = document.getElementById(img)
+    const url = image.getAttribute("src")
+    const xhr = new XMLHttpRequest();
+    xhr.onload = () => {
+      if (xhr.status != 200) {
+        image.setAttribute("src","img/not-found.png")
+      }
+    };
+  
+    xhr.open('HEAD', url);
+    xhr.send();
+  }
+}
+
+imageValidation(films)
+
+
+
+
+
 
 const filterBtn = document.getElementById("filter-btn")
 const filter = document.getElementById("filter")

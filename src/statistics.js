@@ -1,5 +1,3 @@
-import { filterData } from './data.js'
-import { sortData } from './data.js';
 import { average } from './data.js';
 
 
