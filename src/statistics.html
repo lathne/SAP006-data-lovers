@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dados - Studio Ghibli para mulheres</title>
+    <title>Dados - Studio Ghibli</title>
     <link rel="stylesheet" href="./statistics.css" />
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   </head>
@@ -13,7 +13,7 @@
   <header class="header">
     <div class="title-container">
       <h1 class="site-title">STUDIO GHIBLI</h1>
-      <h3 class="subtitle">PARA MULHERES</h3>
+      <h3 class="subtitle">QUEBRANDO PARADIGMAS</h3>
     </div>
     
     <nav class="navbar">
@@ -27,23 +27,23 @@
   </header>
 
   <main class="main">
+    
     <section class="flex-container">
+      <div class="films info" id="totalFilms"></div>
 
       <div class="chart films">
         <canvas id="filmsTimeLineChart" class="flex-item"></canvas>
       </div>
 
-      <div class="films info" id="totalFilms"></div>
-
    </section>
 
    <section class="flex-container">
 
-      <div class="scores info" id="averageScore"></div>
-
       <div class="chart scores">
         <canvas id="chartScores" class="flex-item"></canvas>
       </div>
+
+      <div class="scores info" id="averageScore"></div>
 
    </section>
 

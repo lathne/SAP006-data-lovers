@@ -3,10 +3,11 @@
 
 :root {
   --dark-purple:rgb(64,15,69);
-  --light-purple:rgb(137,60,145);
+  --light-purple:rgb(137, 60, 145);
+  --lighter-purple: rgb(195, 84, 207);
   --dark-green:rgb(44,69,21);
   --medium-green: rgb(100,145,60);
-  --light-green:rgb(164,222,113,87);
+  --light-green:rgb(164,222,113);
   --text-color:rgb(90, 83, 83);
   font-size: 62.5%;
 
@@ -28,7 +29,6 @@ body {
   background-size:100%;
   color:var(--text-color);
   font-size:1.6rem;
-   
 }
 
 /* Header */
@@ -107,22 +107,101 @@ body {
 
 /* Main */
 .index-page{
+  width: 70%;
+  
+  margin: 0 auto;
+  text-align: justify; 
+}
+
+.sections {
+  
+}
+
+.titles {
+  margin: 3% 0 3% 0;
+
+  color: var(--light-purple);
+}
+
+.sections p {
+  margin-top: 2%;
+}
+
+.totoro {
+  float: right;
+  width: 30rem;
+  padding: 5%;
+}
+
+.ashitaka {
+  float: left;
+  width: 35rem;
+  padding: 5%;
+}
+
+.btn {
+  margin: 5% 0 5% 2%;
+  text-align: center;
+  width: 30%;
+
+  outline: none;
+  border: none;
+  border-radius: 3px;
+  padding: 10px;
+
+  background-color: var(--medium-green);
+  font-size: 1.2rem;
+}
+
+.btn a {
+  text-decoration: none;
+  color: white;
+}
+
+.btn:hover{
+  background-color: var(--light-green);
+  color: var(--light-purple);
+  transition: .3s ease-in;
+}
+
+.btn a:hover {
+  color: var(--light-purple);
+  transition: .3s ease-in;
+}
+
+/* Footer */
+
+.footer {
+  background-image: linear-gradient(to bottom, rgba(78, 19, 85, 0.829), #2c4515d2), url('./img/header.png');
   width: 100%;
- 
-  
+  height: 20rem;
+
 }
 
-.page-title{
-  align-self: flex-start;
-  font-size: 3rem;
-  font-weight: 900;
-  color:var(--light-purple);
-  margin: 3% 0 2% 12%;
-  line-height: normal;
-  
+.footer p {
+  display: block;
+  margin: 3% auto;
+  text-align: center;
+  color: var(--light-green);
+  padding: 0.5%;
 }
 
+.footer a {
+  text-decoration: none;
+  color: var(--light-green);
+}
 
+.footer a:hover {
+  color: var(--lighter-purple);
+  transition: .2s ease-in;
+}
+
+.totoros {
+  display: block;
+  width: 20rem;
+  text-align: center;
+  margin: 2% auto;
+}
 
 @media(min-width:1500px){
   :root{
@@ -206,6 +285,9 @@ body {
 
  
 }
+
+
+
 
 @media(max-width:400px){
   :root{
