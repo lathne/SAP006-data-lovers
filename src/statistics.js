@@ -27,8 +27,16 @@ new Chart(filmsTimeLineChart, {
     }]
   },
   options: {
+    plugins: {
+      legend: {
+        labels:{
+          font: {
+            size: 14
+          }
+        }
+      }
+    },
     responsive: true,
-    
     }
 })
 
@@ -39,7 +47,7 @@ new Chart(chartScores, {
       datasets: [{
         label: "Notas Por Filme",
         data: filmScores,
-        backgroundColor: "rgb(41, 158, 71, 0.5)",
+        backgroundColor: "rgb(100, 145, 60, 0.5)",
         fill: true
       }]
     },
@@ -49,7 +57,16 @@ new Chart(chartScores, {
         y: {
           min: 40
         }
-      }
+      },
+      plugins: {
+        legend: {
+          labels:{
+            font: {
+              size: 14
+            }
+          }
+        }
+      },
     }
 
 })
