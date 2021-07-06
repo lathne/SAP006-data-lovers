@@ -70,7 +70,7 @@ body {
 }
   
 .subtitle {
-  font-size: 3rem;
+  font-size: 2.5rem;
   font-weight: 300;
   margin-top:0.5rem;
 }
@@ -390,6 +390,9 @@ body {
   
 }
 
+.modal::-webkit-scrollbar {
+  width: 0px;  
+}
 
 .modal-container.mostrar{
   display:flex;
@@ -499,8 +502,6 @@ body {
 }
 
 
-
-
 @media(min-width:1500px){
   :root{
     font-size:1rem;
@@ -508,11 +509,8 @@ body {
 
   .team{
     width:30%;
-   
-  
   }
   
-
   .images{
     width:60%;
   }
@@ -521,7 +519,6 @@ body {
     width:60vw;
   }
 
-  
 }
 
 
@@ -821,5 +818,5 @@ body {
   .picture-4{
     display:block;
   }
-}
 
+}

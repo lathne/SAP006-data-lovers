@@ -1,6 +1,6 @@
 import { filterData } from './data.js'
 import { sortData } from './data.js';
-import { average } from './data.js';
+
 
 
 import data from './data/ghibli/ghibli.js'
@@ -8,10 +8,6 @@ import data from './data/ghibli/ghibli.js'
 const films = data.films
 
 const containerMovies = document.getElementById("container-movies")
-
-
-
-
 const printMovieList = (movieList) => {
   movieList.forEach(film => {
     containerMovies.innerHTML += `  
@@ -32,7 +28,7 @@ const printMovieList = (movieList) => {
             <div class="movie-headline" id="movie-headline">
               
               <div class="container-title">
-                <h3 class="movie-title" id="movie-title">${film.title}</h3>
+                <h3 class="movie-title notranslate" id="movie-title">${film.title}</h3>
                 <h5 class="release-date" id="release-date">${film.release_date}</h5>
               </div>
         
@@ -79,42 +75,51 @@ const printMovieList = (movieList) => {
 }
 
 
-printMovieList(films)
-
 const seeMoreCharacters = () => {
   const seeMoreBtns = document.querySelectorAll(".more-characters")
   seeMoreBtns.forEach(btn =>
     btn.addEventListener("click", (event) =>{
+      
       const idMovie = event.currentTarget.id
       const movieSelected = films.find(film => film.id == idMovie)
       const peopleOfMovieSelected = movieSelected.people
       const modal = document.getElementById("modal-characters")
+      const modalBox = document.getElementById("modal-box")
       const modalBtn = document.getElementById("modal-btn")
       const modalTitle =document.getElementById("modal-title")
 
       const characterContainer = document.getElementById("characters-container")
-      modalTitle.innerText=`Personagens de ${movieSelected.title}`
+      
 
+      modalTitle.innerText=`Personagens de ${movieSelected.title}`
+      
       peopleOfMovieSelected.forEach(people =>{
+        
         characterContainer.innerHTML+=`
         <div  class="character">
             <img class="image-modal" src="${people.img}" alt="">
-            <p class="name-modal">${people.name}</p>
+            <p class="name-modal notranslate">${people.name}</p>
         </div>     
         `
 
       })
+
       modal.classList.add("mostrar")
+      
      
       modalBtn.addEventListener("click", ()=>{
+       
         modal.classList.remove("mostrar")
         characterContainer.innerHTML=""
+      
       })
 
       modal.addEventListener("click",(event)=>{
+
         if(event.target.id == "modal-characters"){
           modal.classList.remove("mostrar")
           characterContainer.innerHTML=""
+     
           
         }
       })
@@ -125,6 +130,7 @@ const seeMoreCharacters = () => {
 
 
 window.addEventListener('DOMContentLoaded', () =>{
+  printMovieList(films)
   seeMoreCharacters()
   
 })
