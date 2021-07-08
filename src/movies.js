@@ -7,28 +7,25 @@ import data from './data/ghibli/ghibli.js'
 
 const films = data.films
 
-const imageValidation = (peopleList) =>{
 
-  const arrayImg = []
-  for (let people of peopleList){
-    let imgId = people.id
-    arrayImg.push(imgId)
-  }
+const imageValidation = (className) =>{
 
-  for(let img of arrayImg){
-    const image = document.getElementById(img)
-    const url = image.getAttribute("src")
-    const xhr = new XMLHttpRequest();
-    xhr.onload = () => {
-      if (xhr.status != 200) {
-        image.setAttribute("src","img/not-found.png")
-      }
-    };
-  
-    xhr.open('HEAD', url);
-    xhr.send();
-  }
+  let arrayImgs = document.querySelectorAll(className)
+
+    for(let img of arrayImgs){
+      const url = img.getAttribute("src")
+      const xhr = new XMLHttpRequest();
+      xhr.onload = () => {
+        if (xhr.status != 200) {
+          img.setAttribute("src","img/not-found-small.png")
+        }
+      };
+    
+      xhr.open('HEAD', url);
+      xhr.send();
+    }
 }
+
 
 const containerMovies = document.getElementById("container-movies")
 const printMovieList = (movieList) => {
@@ -97,23 +94,6 @@ const printMovieList = (movieList) => {
 
   })
 
-  let arrayImgs = document.querySelectorAll(".character-picture")
-
-    for(let img of arrayImgs){
-      const url = img.getAttribute("src")
-      const xhr = new XMLHttpRequest();
-      xhr.onload = () => {
-        if (xhr.status != 200) {
-          img.setAttribute("src","img/not-found.png")
-        }
-      };
-    
-      xhr.open('HEAD', url);
-      xhr.send();
-    }
-  
-  
-
 }
 
 
@@ -149,7 +129,7 @@ const seeMoreCharacters = () => {
 
       })
 
-      imageValidation(peopleOfMovieSelected)
+      imageValidation(".image-modal")
 
      
 
@@ -182,6 +162,7 @@ const seeMoreCharacters = () => {
 window.addEventListener('DOMContentLoaded', () =>{
   printMovieList(films)
   seeMoreCharacters()
+  imageValidation(".character-picture")
   
 })
 
@@ -212,16 +193,15 @@ filterBtn.addEventListener("click",(event)=>{
 
 //IMPRIMINDO LISTA ORDENADA
 
-order.addEventListener("change", (event) => {
+order.addEventListener("change", () => {
   containerMovies.innerHTML = ""
   const optionSelected = order.options[order.selectedIndex]
   const optionValue = optionSelected.value
   const optionClass = optionSelected.getAttribute("class")
   const sortedList = sortData(films, optionClass, optionValue)
   printMovieList(sortedList)
+  imageValidation(".character-picture")
   seeMoreCharacters()
-  event.preventDefault()
-
 
 })
 
@@ -276,7 +256,7 @@ arrayProducers.forEach(producer => {
 
 
 
-filter.addEventListener("change", (event) => {
+filter.addEventListener("change", () => {
   containerMovies.innerHTML = ""
   const optionSelected = filter.options[filter.selectedIndex]
   const optionText = optionSelected.text
@@ -284,9 +264,8 @@ filter.addEventListener("change", (event) => {
 
   const filteredList = filterData(films, optionClass, optionText)
   printMovieList(filteredList)
+  imageValidation(".character-picture")
   seeMoreCharacters()
-
-  event.preventDefault()
 
 })
 

@@ -148,6 +148,6 @@ describe('average', () => {
   });
 
   it('should return 30 for [84,5,2,74,9,6]', () => {
-    expect(average([84,5,2,74,9,6])).toStrictEqual(30);
+    expect(average([84,5,2,74,9,6])).toBe(30);
   });
 });

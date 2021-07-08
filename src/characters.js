@@ -39,6 +39,8 @@ const printPeople = (peopleList, film)=>{
   })
   
   gallery.innerHTML += charactersCards
+  
+  
 }
 
 for (let film of films) {
@@ -48,37 +50,25 @@ for (let film of films) {
 
 //Trocando imagens não encontradas
 
-const imageValidation = (peopleList) =>{
+const imageValidation = () =>{
 
-  const arrayImg = []
-    for (let people of peopleList){
-      let imgId = people.id
-      arrayImg.push(imgId)
+  let arrayImgs = document.querySelectorAll(".card-img")
+
+    for(let img of arrayImgs){
+      const url = img.getAttribute("src")
+      const xhr = new XMLHttpRequest();
+      xhr.onload = () => {
+        if (xhr.status != 200) {
+          img.setAttribute("src","img/not-found2.png")
+        }
+      };
+    
+      xhr.open('HEAD', url);
+      xhr.send();
     }
-  
-
-  for(let img of arrayImg){
-    const image = document.getElementById(img)
-    const url = image.getAttribute("src")
-    const xhr = new XMLHttpRequest();
-    xhr.onload = () => {
-      if (xhr.status != 200) {
-        image.setAttribute("src","img/not-found.png")
-      }
-    };
-  
-    xhr.open('HEAD', url);
-    xhr.send();
   }
-}
 
-for (let film of films) {
-  let peopleList = film.people
-  imageValidation(peopleList)
-}
-
-
-
+  imageValidation()
 
 
 const filterBtn = document.getElementById("filter-btn")
@@ -101,7 +91,7 @@ const genderFilter = (film,gender) => {
 const filterGender=document.getElementById("filter-gender")
 const filterMovie = document.getElementById("filter-movie")
 
-filterGender.addEventListener("change", (event)=>{
+filterGender.addEventListener("change", ()=>{
   gallery.innerHTML=""
   const genderSelected = filterGender.options[filterGender.selectedIndex]
   const genderValue = genderSelected.value
@@ -114,12 +104,12 @@ filterGender.addEventListener("change", (event)=>{
   if(movie !== undefined){
     if(genderValue!="All"){
       printPeople(genderFilter(movie, genderValue),movie.title)
-      imageValidation(genderFilter(movie, genderValue))
+      // imageValidation(genderFilter(movie, genderValue))
       
     } else{
       const people = movie.people
       printPeople(people, movie.title)
-      imageValidation(people)
+      // imageValidation(people)
       
     }
   }else{
@@ -128,22 +118,20 @@ filterGender.addEventListener("change", (event)=>{
       films.forEach(film => {
         genderList = genderFilter(film, genderValue)
         printPeople(genderList,film.title)
-        imageValidation(genderList) //não funciona
-      }
-      
-      )
-      
+        // imageValidation(genderList) //não funciona
+      })
 
     }else{
       films.forEach(film => {
         const peopleList = film.people
         printPeople(peopleList, film.title)
-        imageValidation(peopleList) //não funciona
+        // imageValidation(peopleList) //não funciona
       })
       
     }
   }
-  event.preventDefault()
+  imageValidation()
+  
 })
 
 //filtro por filme
@@ -175,13 +163,13 @@ filterMovie.addEventListener("change", ()=>{
   if(genderValue !== "All"){
     if(movie !== undefined){
       printPeople(genderFilter(movie, genderValue),movie.title)
-      imageValidation(genderFilter(movie, genderValue))
+      // imageValidation(genderFilter(movie, genderValue))
 
 
     }else{
       films.forEach(film => {
         printPeople(genderFilter(film, genderValue),film.title)
-        imageValidation(genderFilter(film, genderValue))
+        // imageValidation(genderFilter(film, genderValue))
       })
       
     }
@@ -189,16 +177,17 @@ filterMovie.addEventListener("change", ()=>{
     if(movie !== undefined){
       const people = movie.people
       printPeople(people, movie.title)
-      imageValidation(people)
+      // imageValidation(people)
     }
     else{
       films.forEach(film => {
         const peopleList = film.people
         printPeople(peopleList,film.title)
-        imageValidation(peopleList) //não funciona
+        // imageValidation(peopleList) //não funciona
       })
       
     }
-  }  
+  } 
+  imageValidation() 
 })
 
