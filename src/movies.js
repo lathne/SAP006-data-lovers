@@ -77,10 +77,10 @@ const printMovieList = (movieList) => {
         <div id="characters">
               <h4 class="detail-title">Personagens</h4>
               <div class="images">
-                <img src=${film.people[0].img} onerror="this.src='img/not-found.png';" alt="" class="character-picture" >
-                <img src=${film.people[1].img} alt="" class="character-picture" >
-                <img src=${film.people[2].img} alt="" class="character-picture" >
-                <img src=${film.people[3].img} alt="" class="character-picture picture-4" >
+                <img src=${film.people[0].img} alt="" class="character-picture">
+                <img src=${film.people[1].img} alt="" class="character-picture">
+                <img src=${film.people[2].img} alt="" class="character-picture">
+                <img src=${film.people[3].img} alt="" class="character-picture picture-4">
                 <button class="more-characters" id=${film.id}><img class="see-more" src="img/more-than.png" alt="">Ver todos</button>
               </div>
             </div>
@@ -92,9 +92,28 @@ const printMovieList = (movieList) => {
 
       </section>
     </section>
+    
   `
- 
+
   })
+
+  let arrayImgs = document.querySelectorAll(".character-picture")
+
+    for(let img of arrayImgs){
+      const url = img.getAttribute("src")
+      const xhr = new XMLHttpRequest();
+      xhr.onload = () => {
+        if (xhr.status != 200) {
+          img.setAttribute("src","img/not-found.png")
+        }
+      };
+    
+      xhr.open('HEAD', url);
+      xhr.send();
+    }
+  
+  
+
 }
 
 
@@ -117,6 +136,7 @@ const seeMoreCharacters = () => {
 
       modalTitle.innerText=`Personagens de ${movieSelected.title}`
 
+      
       
       peopleOfMovieSelected.forEach(people =>{
         

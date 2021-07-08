@@ -129,14 +129,16 @@ filterGender.addEventListener("change", (event)=>{
         genderList = genderFilter(film, genderValue)
         printPeople(genderList,film.title)
         imageValidation(genderList) //não funciona
-      })
+      }
+      
+      )
       
 
     }else{
       films.forEach(film => {
         const peopleList = film.people
         printPeople(peopleList, film.title)
-        imageValidation(peopleList)
+        imageValidation(peopleList) //não funciona
       })
       
     }
