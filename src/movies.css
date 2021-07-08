@@ -384,15 +384,42 @@ body {
   background-color: white;
   padding:4rem;
   position:relative;
-  border-radius:2rem;
+  border-radius: 10px ;
   overflow-y: auto;
   overflow-x: hidden;
   
 }
 
-.modal::-webkit-scrollbar {
-  width: 0px;  
+/* Works on Firefox */
+.modal {
+  scrollbar-width: auto;
+  scrollbar-color: gray white;
+  scrollbar-3dlight-color: aquamarine;
 }
+
+/* Works on Chrome, Edge, and Safari */
+.modal::-webkit-scrollbar {
+  width: 12px;
+  height: 50px;
+}
+
+.modal::-webkit-scrollbar-track {
+  background: white;
+  border-radius: 8px;
+}
+
+.modal::-webkit-scrollbar-thumb {
+  background-color: gray;
+  border-radius: 20px;
+  border: 3px solid white;
+  
+}
+
+/* .modal::-webkit-scrollbar {
+  width: 0px;  
+} */
+
+
 
 .modal-container.mostrar{
   display:flex;
@@ -501,6 +528,41 @@ body {
   
 }
 
+/* Footer */
+
+.footer {
+  background-image: linear-gradient(to bottom, #2c4515d2, rgba(78, 19, 85, 0.829)), url('./img/header.png');
+  width: 100%;
+  height: 20rem;
+
+}
+
+.totoros {
+  display: block;
+  width: 15rem;
+  text-align: center;
+  margin: 5% auto;
+  padding-top: 1%;
+}
+
+.footer p {
+  display: block;
+  margin: 0% auto;
+  text-align: center;
+  color: var(--light-green);
+  padding: 0.5%;
+}
+.footer a {
+  text-decoration: none;
+  color: var(--light-green);
+}
+
+.footer a:hover {
+  color: var(--lighter-purple);
+  transition: .2s ease-in;
+}
+
+
 
 @media(min-width:1500px){
   :root{
@@ -530,13 +592,9 @@ body {
   .images{
     width:70%;
   }
-
-
 }
 
 @media(max-width:1024px){
-
-
   .header{
     height:70vh;
     background-image: linear-gradient(to bottom, rgba(78, 19, 85, 0.829), #2c4515d2), url('./img/header-small.png'); 
@@ -567,10 +625,8 @@ body {
 
   .modal{
     width:60vw;
-
-  
+ }
 }
-
 
 @media(max-width:768px){
   :root{
@@ -588,9 +644,7 @@ body {
 
   .modal{
     width:70vw;
-
-
-  
+ }
 }
 
 @media(max-width:630px){
@@ -789,8 +843,6 @@ body {
     
     line-height: 2rem;
   }
-
- 
 }
 
 @media(max-width:400px){
@@ -818,5 +870,4 @@ body {
   .picture-4{
     display:block;
   }
-
 }

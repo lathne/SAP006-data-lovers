@@ -108,18 +108,12 @@ body {
 /* Main */
 .index-page{
   width: 70%;
-  
   margin: 0 auto;
   text-align: justify; 
 }
 
-.sections {
-  
-}
-
 .titles {
   margin: 3% 0 3% 0;
-
   color: var(--light-purple);
 }
 
@@ -135,7 +129,7 @@ body {
 
 .ashitaka {
   float: left;
-  width: 35rem;
+  width: 30rem;
   padding: 5%;
 }
 
@@ -172,20 +166,27 @@ body {
 /* Footer */
 
 .footer {
-  background-image: linear-gradient(to bottom, rgba(78, 19, 85, 0.829), #2c4515d2), url('./img/header.png');
+  background-image: linear-gradient(to bottom, #2c4515d2, rgba(78, 19, 85, 0.829)), url('./img/header.png');
   width: 100%;
   height: 20rem;
 
 }
 
+.totoros {
+  display: block;
+  width: 15rem;
+  text-align: center;
+  margin: 5% auto;
+  padding-top: 1%;
+}
+
 .footer p {
   display: block;
-  margin: 3% auto;
+  margin: 0% auto;
   text-align: center;
   color: var(--light-green);
   padding: 0.5%;
 }
-
 .footer a {
   text-decoration: none;
   color: var(--light-green);
@@ -196,12 +197,7 @@ body {
   transition: .2s ease-in;
 }
 
-.totoros {
-  display: block;
-  width: 20rem;
-  text-align: center;
-  margin: 2% auto;
-}
+/* Responsividade */
 
 @media(min-width:1500px){
   :root{
@@ -219,10 +215,39 @@ body {
 
 @media(max-width:1024px){
 
-
   .header{
     height:70vh;
     background-image: linear-gradient(to bottom, rgba(78, 19, 85, 0.829), #2c4515d2), url('./img/header-small.png'); 
+  }
+
+  .titles {
+    text-align: center;
+  }
+
+  .totoro {
+    display: block;
+    float: initial;
+    
+    margin: auto;
+    width: 30rem;
+    padding: 5%;
+  }
+  
+  .ashitaka {
+    display: block;
+    float: initial;
+    
+    margin: auto;
+    width: 30rem;
+    padding: 5%;
+  }
+
+  .btn {
+    height: 5rem;
+    width: 50%;
+    font-size: 1.4rem;
+    display: block;
+    margin: 2% auto;
   }
 }
 
@@ -282,7 +307,6 @@ body {
     width: 90%;
     justify-content:space-between;
   }
-
  
 }
 
