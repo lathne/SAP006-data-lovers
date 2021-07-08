@@ -13,7 +13,9 @@ const filmYears = films.map(film => film["release_date"])
 const chartScores = document.getElementById("chartScores")
 const filmsTimeLineChart = document.getElementById("filmsTimeLineChart")
 
-new Chart(filmsTimeLineChart, {
+/* eslint-disable no-undef */
+new Chart(filmsTimeLineChart, { 
+
   type: 'line',
   data: {
     labels: filmTitles,

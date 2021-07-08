@@ -7,6 +7,29 @@ import data from './data/ghibli/ghibli.js'
 
 const films = data.films
 
+const imageValidation = (peopleList) =>{
+
+  const arrayImg = []
+  for (let people of peopleList){
+    let imgId = people.id
+    arrayImg.push(imgId)
+  }
+
+  for(let img of arrayImg){
+    const image = document.getElementById(img)
+    const url = image.getAttribute("src")
+    const xhr = new XMLHttpRequest();
+    xhr.onload = () => {
+      if (xhr.status != 200) {
+        image.setAttribute("src","img/not-found.png")
+      }
+    };
+  
+    xhr.open('HEAD', url);
+    xhr.send();
+  }
+}
+
 const containerMovies = document.getElementById("container-movies")
 const printMovieList = (movieList) => {
   movieList.forEach(film => {
@@ -54,10 +77,10 @@ const printMovieList = (movieList) => {
         <div id="characters">
               <h4 class="detail-title">Personagens</h4>
               <div class="images">
-                <img src=${film.people[0].img} alt="" class="character-picture">
-                <img src=${film.people[1].img} alt="" class="character-picture">
-                <img src=${film.people[2].img} alt="" class="character-picture">
-                <img src=${film.people[3].img} alt="" class="character-picture picture-4">
+                <img src=${film.people[0].img} onerror="this.src='img/not-found.png';" alt="" class="character-picture" >
+                <img src=${film.people[1].img} alt="" class="character-picture" >
+                <img src=${film.people[2].img} alt="" class="character-picture" >
+                <img src=${film.people[3].img} alt="" class="character-picture picture-4" >
                 <button class="more-characters" id=${film.id}><img class="see-more" src="img/more-than.png" alt="">Ver todos</button>
               </div>
             </div>
@@ -70,8 +93,8 @@ const printMovieList = (movieList) => {
       </section>
     </section>
   `
+ 
   })
-
 }
 
 
@@ -83,41 +106,48 @@ const seeMoreCharacters = () => {
       const idMovie = event.currentTarget.id
       const movieSelected = films.find(film => film.id == idMovie)
       const peopleOfMovieSelected = movieSelected.people
-      const modal = document.getElementById("modal-characters")
-      const modalBox = document.getElementById("modal-box")
+      const modalExtern = document.getElementById("modal-characters")
+      const modal = document.getElementById("modal")
       const modalBtn = document.getElementById("modal-btn")
       const modalTitle =document.getElementById("modal-title")
 
       const characterContainer = document.getElementById("characters-container")
       
+      
 
       modalTitle.innerText=`Personagens de ${movieSelected.title}`
+
       
       peopleOfMovieSelected.forEach(people =>{
         
         characterContainer.innerHTML+=`
         <div  class="character">
-            <img class="image-modal" src="${people.img}" alt="">
+            <img class="image-modal" src=${people.img} id=${people.id}  alt="">
             <p class="name-modal notranslate">${people.name}</p>
         </div>     
         `
 
       })
 
-      modal.classList.add("mostrar")
+      imageValidation(peopleOfMovieSelected)
+
+     
+
+      modalExtern.classList.add("mostrar")
+      modal.scrollTop = 0;
       
      
       modalBtn.addEventListener("click", ()=>{
        
-        modal.classList.remove("mostrar")
+        modalExtern.classList.remove("mostrar")
         characterContainer.innerHTML=""
       
       })
 
-      modal.addEventListener("click",(event)=>{
+      modalExtern.addEventListener("click",(event)=>{
 
         if(event.target.id == "modal-characters"){
-          modal.classList.remove("mostrar")
+          modalExtern.classList.remove("mostrar")
           characterContainer.innerHTML=""
      
           
@@ -143,6 +173,7 @@ const filter = document.getElementById("filter")
 const filterBtn = document.getElementById("filter-btn")
 
 
+//revelando caixa select ordenar
 orderBtn.addEventListener("click",(event)=>{
   order.style.display="inline-block"
   filter.style.display="none"
@@ -171,7 +202,9 @@ order.addEventListener("change", (event) => {
   seeMoreCharacters()
   event.preventDefault()
 
+
 })
+
 
 
 //IMPRIMINDO LISTA FILTRADA
@@ -186,6 +219,8 @@ const directorsList = (filmsList) => {
   }
   return directors
 }
+
+
 
 const setDirectors = [...new Set(directorsList(films))]
 const arrayDirectors = Array.from(setDirectors)
@@ -234,6 +269,5 @@ filter.addEventListener("change", (event) => {
   event.preventDefault()
 
 })
-
 
 

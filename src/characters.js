@@ -46,18 +46,16 @@ for (let film of films) {
   printPeople(peopleList, film.title)
 }
 
+//Trocando imagens não encontradas
 
-
-const imageValidation = (filmsList) =>{
+const imageValidation = (peopleList) =>{
 
   const arrayImg = []
-    for (let film of filmsList) {
-      let peopleList = film.people
-      for (let people of peopleList){
-        let imgId = people.id
-        arrayImg.push(imgId)
+    for (let people of peopleList){
+      let imgId = people.id
+      arrayImg.push(imgId)
     }
-  }
+  
 
   for(let img of arrayImg){
     const image = document.getElementById(img)
@@ -74,8 +72,10 @@ const imageValidation = (filmsList) =>{
   }
 }
 
-imageValidation(films)
-
+for (let film of films) {
+  let peopleList = film.people
+  imageValidation(peopleList)
+}
 
 
 
@@ -114,20 +114,31 @@ filterGender.addEventListener("change", (event)=>{
   if(movie !== undefined){
     if(genderValue!="All"){
       printPeople(genderFilter(movie, genderValue),movie.title)
+      imageValidation(genderFilter(movie, genderValue))
+      
     } else{
       const people = movie.people
       printPeople(people, movie.title)
+      imageValidation(people)
+      
     }
   }else{
     if(genderValue!=="All"){
+      let genderList
       films.forEach(film => {
-        printPeople(genderFilter(film, genderValue),film.title)
+        genderList = genderFilter(film, genderValue)
+        printPeople(genderList,film.title)
+        imageValidation(genderList) //não funciona
       })
+      
+
     }else{
       films.forEach(film => {
         const peopleList = film.people
-        printPeople(peopleList,film.title)
+        printPeople(peopleList, film.title)
+        imageValidation(peopleList)
       })
+      
     }
   }
   event.preventDefault()
@@ -162,27 +173,30 @@ filterMovie.addEventListener("change", ()=>{
   if(genderValue !== "All"){
     if(movie !== undefined){
       printPeople(genderFilter(movie, genderValue),movie.title)
+      imageValidation(genderFilter(movie, genderValue))
+
+
     }else{
       films.forEach(film => {
         printPeople(genderFilter(film, genderValue),film.title)
+        imageValidation(genderFilter(film, genderValue))
       })
+      
     }
   } else{
     if(movie !== undefined){
       const people = movie.people
       printPeople(people, movie.title)
+      imageValidation(people)
     }
     else{
       films.forEach(film => {
         const peopleList = film.people
         printPeople(peopleList,film.title)
+        imageValidation(peopleList) //não funciona
       })
+      
     }
   }  
 })
-
-
-
-
-
 
