@@ -7,6 +7,26 @@ import data from './data/ghibli/ghibli.js'
 
 const films = data.films
 
+
+const imageValidation = (className) =>{
+
+  let arrayImgs = document.querySelectorAll(className)
+
+    for(let img of arrayImgs){
+      const url = img.getAttribute("src")
+      const xhr = new XMLHttpRequest();
+      xhr.onload = () => {
+        if (xhr.status != 200) {
+          img.setAttribute("src","img/not-found-small.png")
+        }
+      };
+    
+      xhr.open('HEAD', url);
+      xhr.send();
+    }
+}
+
+
 const containerMovies = document.getElementById("container-movies")
 const printMovieList = (movieList) => {
   movieList.forEach(film => {
@@ -69,7 +89,9 @@ const printMovieList = (movieList) => {
 
       </section>
     </section>
+    
   `
+
   })
 
 }
@@ -83,41 +105,49 @@ const seeMoreCharacters = () => {
       const idMovie = event.currentTarget.id
       const movieSelected = films.find(film => film.id == idMovie)
       const peopleOfMovieSelected = movieSelected.people
-      const modal = document.getElementById("modal-characters")
-      const modalBox = document.getElementById("modal-box")
+      const modalExtern = document.getElementById("modal-characters")
+      const modal = document.getElementById("modal")
       const modalBtn = document.getElementById("modal-btn")
       const modalTitle =document.getElementById("modal-title")
 
       const characterContainer = document.getElementById("characters-container")
       
+      
 
       modalTitle.innerText=`Personagens de ${movieSelected.title}`
+
+      
       
       peopleOfMovieSelected.forEach(people =>{
         
         characterContainer.innerHTML+=`
         <div  class="character">
-            <img class="image-modal" src="${people.img}" alt="">
+            <img class="image-modal" src=${people.img} id=${people.id}  alt="">
             <p class="name-modal notranslate">${people.name}</p>
         </div>     
         `
 
       })
 
-      modal.classList.add("mostrar")
+      imageValidation(".image-modal")
+
+     
+
+      modalExtern.classList.add("mostrar")
+      modal.scrollTop = 0;
       
      
       modalBtn.addEventListener("click", ()=>{
        
-        modal.classList.remove("mostrar")
+        modalExtern.classList.remove("mostrar")
         characterContainer.innerHTML=""
       
       })
 
-      modal.addEventListener("click",(event)=>{
+      modalExtern.addEventListener("click",(event)=>{
 
         if(event.target.id == "modal-characters"){
-          modal.classList.remove("mostrar")
+          modalExtern.classList.remove("mostrar")
           characterContainer.innerHTML=""
      
           
@@ -132,6 +162,7 @@ const seeMoreCharacters = () => {
 window.addEventListener('DOMContentLoaded', () =>{
   printMovieList(films)
   seeMoreCharacters()
+  imageValidation(".character-picture")
   
 })
 
@@ -143,6 +174,7 @@ const filter = document.getElementById("filter")
 const filterBtn = document.getElementById("filter-btn")
 
 
+//revelando caixa select ordenar
 orderBtn.addEventListener("click",(event)=>{
   order.style.display="inline-block"
   filter.style.display="none"
@@ -161,17 +193,18 @@ filterBtn.addEventListener("click",(event)=>{
 
 //IMPRIMINDO LISTA ORDENADA
 
-order.addEventListener("change", (event) => {
+order.addEventListener("change", () => {
   containerMovies.innerHTML = ""
   const optionSelected = order.options[order.selectedIndex]
   const optionValue = optionSelected.value
   const optionClass = optionSelected.getAttribute("class")
   const sortedList = sortData(films, optionClass, optionValue)
   printMovieList(sortedList)
+  imageValidation(".character-picture")
   seeMoreCharacters()
-  event.preventDefault()
 
 })
+
 
 
 //IMPRIMINDO LISTA FILTRADA
@@ -186,6 +219,8 @@ const directorsList = (filmsList) => {
   }
   return directors
 }
+
+
 
 const setDirectors = [...new Set(directorsList(films))]
 const arrayDirectors = Array.from(setDirectors)
@@ -221,7 +256,7 @@ arrayProducers.forEach(producer => {
 
 
 
-filter.addEventListener("change", (event) => {
+filter.addEventListener("change", () => {
   containerMovies.innerHTML = ""
   const optionSelected = filter.options[filter.selectedIndex]
   const optionText = optionSelected.text
@@ -229,11 +264,9 @@ filter.addEventListener("change", (event) => {
 
   const filteredList = filterData(films, optionClass, optionText)
   printMovieList(filteredList)
+  imageValidation(".character-picture")
   seeMoreCharacters()
 
-  event.preventDefault()
-
 })
-
 
 

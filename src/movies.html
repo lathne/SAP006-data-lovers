@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Filmes - Studio Ghibli quebrando paradigmas</title>
+    <title>Filmes - Studio Ghibli - Quebrando paradigmas</title>
     <link rel="stylesheet" href="./movies.css"/>
   </head>
   <body>
@@ -45,7 +45,7 @@
           </div>
           
           <select class="dropdown-menu" name="order" id="order">
-            <option selected disable>Selecione</option>
+            <option disabled="disabled">Selecione</option>
             <optgroup label="ALFABÉTICO">
               <option value="ascending" class="title">A &#8594 Z</option>
               <option value="descending" class="title">Z &#8594 A</option>
@@ -73,7 +73,7 @@
       
           </div>
           <select class="dropdown-menu" name="filter-choice" id="filter">
-            <option selected disable>Selecione</option>
+            <option disabled="disabled">Selecione</option>
             <optgroup label="DIRETOR" id="director-list">
             </optgroup>
             <optgroup label="PRODUTOR" id="producer-list">
@@ -91,12 +91,10 @@
       <div class="modal" id="modal">
         <button class="modal-btn" id="modal-btn">x</button>
         <h3 class="modal-title" id="modal-title"></h3>
-        <div class="modal-title">
-
-        </div>
+        
         <div class="characters-container" id="characters-container">
-          
         </div>
+
       </div>
     </section>
 

@@ -1,6 +1,10 @@
+/* eslint-disable no-undef */
+/* exported googleTranslateElementInit */
+/* exported trocarIdioma */
+
 var comboGoogleTradutor = null; //Varialvel global
   
-      function googleTranslateElementInit() {
+      function googleTranslateElementInit() { // eslint-disable-line no-unused-vars
           new google.translate.TranslateElement({
               pageLanguage: 'en,pt',
               includedLanguages: 'en,pt',
@@ -21,7 +25,7 @@ var comboGoogleTradutor = null; //Varialvel global
           }
       }
   
-      function trocarIdioma(sigla) {
+      function trocarIdioma(sigla) { // eslint-disable-line no-unused-vars
           if (comboGoogleTradutor) {
               comboGoogleTradutor.value = sigla;
               changeEvent(comboGoogleTradutor);//Dispara a troca
