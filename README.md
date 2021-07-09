@@ -45,15 +45,12 @@ saber quantos e quais são
 - Os personagens têm características únicas que o usuário deseja conhecer, como
 nome, idade, sexo, espécie, etc.
 
-![História de Usuário 1](src/img/hist_usuario_alfabetica.PNG=250x)  |  ![História de Usuário 2](src/img/hist_usuario_nota.PNG=250x) |  ![História de Usuário 3](src/img/hist_usuario_estreia.PNG=250x) 
-
-![História de Usuário 4](src/img/hist_usuario_diretores.PNG=250x)  |  ![História de Usuário 5](src/img/hist_usuario_produtores.PNX=250x) |  ![História de Usuário 6](src/img/hist_usuario_personagens.PNG=250x) 
-
+![História de Usuário 1](src/img/montagem-historias.png)
 ## 3. Desenvolvimento da Interface
 
 Após a primeira análise dos dados disponíveis, percebemos que o site contaria com com cards de filmes e personagens que seriam filtrados e ordenados. A partir desta primeira ideia foi definido o protótipo de baixa fidelidade:
 
-![Protótipo de Baixa Fidelidade](src/img/prototipo-baixaf.jpg=250x) | ![Protótipo de Baixa Fidelidade](src/img/prototipo-baixaf-mobile.jpg=250x)
+![Protótipo de Baixa Fidelidade](src/img/montagem-prototipos.png)
 
 Posteriormente foi decidido dividir os conteúdos em páginas diferentes. Por esse motivo o layout mudou no protótipo de alta fidelidade:
 
@@ -67,12 +64,12 @@ A página de filmes contém informações e detalhes sobre cada animação.
 
 ![Protótipo de Alta Fidelidade - Filmes](src/img/prototipo-filmes.png)
 
-A paleta de cores utilizada priorizou as cores verde e roxo, com ilustrações de personagens dos filmes.
+A paleta de cores utilizada priorizou as cores verde e roxo, com ilustrações de personagens dos filmes. A imagem a seguir foi usada como inspiração para a escolha das cores.
 
-![Imagem que Inspirou a Escolha](src/img/base-paleta.png)
+![Imagem que Inspirou a Escolha](src/img/base-paleta.png) |
 ![Paleta de Cores](src/img/paleta.png)
 
-O layout da pagina é responsivo e focado em legibilidade com design minimalista e otimizado para dispositivos mobile.
+O layout da pagina é responsivo e focado em legibilidade com design minimalista e otimizado para dispositivos móveis.
 
 ## 4. Testes de usabilidade
 
