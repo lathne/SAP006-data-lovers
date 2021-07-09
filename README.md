@@ -3,10 +3,10 @@
 ## Índice
 
 - [1. Introdução ao Projeto](#1-introdução-ao-projeto)
-- [2. Histórias de Usuários](#2-historias-de-usuario)
+- [2. Histórias de Usuários](#2-histórias-de-usuários)
 - [3. Desenvolvimento da Interface](#3-desenvolvimento-da-interface)
 - [4. Testes de Usabilidade](#4-testes-de-usabilidade)
-- [5. Conteúdos implementados no projeto](#5-conteudos-implementados-no-projeto)
+- [5. Conteúdos implementados no projeto](#5-conteúdos-implementados-no-projeto)
 
 ---
 
@@ -45,15 +45,15 @@ saber quantos e quais são
 - Os personagens têm características únicas que o usuário deseja conhecer, como
 nome, idade, sexo, espécie, etc.
 
-![História de Usuário 1](src/img/hist_usuario_alfabetica.png)  |  ![História de Usuário 2](src/img/hist_usuario_nota.png) |  ![História de Usuário 3](src/img/hist_usuario_estreia.png) 
+![História de Usuário 1](src/img/hist_usuario_alfabetica.PNG=250x)  |  ![História de Usuário 2](src/img/hist_usuario_nota.PNG=250x) |  ![História de Usuário 3](src/img/hist_usuario_estreia.PNG=250x) 
 
-![História de Usuário 4](src/img/hist_usuario_diretores.png)  |  ![História de Usuário 5](src/img/hist_usuario_produtores.png) |  ![História de Usuário 6](src/img/hist_usuario_personagens.png) 
+![História de Usuário 4](src/img/hist_usuario_diretores.PNG=250x)  |  ![História de Usuário 5](src/img/hist_usuario_produtores.PNX=250x) |  ![História de Usuário 6](src/img/hist_usuario_personagens.PNG=250x) 
 
 ## 3. Desenvolvimento da Interface
 
 Após a primeira análise dos dados disponíveis, percebemos que o site contaria com com cards de filmes e personagens que seriam filtrados e ordenados. A partir desta primeira ideia foi definido o protótipo de baixa fidelidade:
 
-![Protótipo de Baixa Fidelidade](src/img/prototipo-baixaf.jpg) | ![Protótipo de Baixa Fidelidade](src/img/prototipo-baixaf-mobile.jpg)
+![Protótipo de Baixa Fidelidade](src/img/prototipo-baixaf.jpg=250x) | ![Protótipo de Baixa Fidelidade](src/img/prototipo-baixaf-mobile.jpg=250x)
 
 Posteriormente foi decidido dividir os conteúdos em páginas diferentes. Por esse motivo o layout mudou no protótipo de alta fidelidade:
 
