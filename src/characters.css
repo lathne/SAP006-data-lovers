@@ -17,8 +17,6 @@
   box-sizing: border-box;
 }
 
-
-
 body {
   margin: 0;
   padding: 0;
@@ -26,11 +24,8 @@ body {
   background-attachment: fixed;
   background-size:100%;
   color:var(--text-color);
-  font-size:1.6rem;
-   
+  font-size:1.6rem; 
 }
-
-/* Header */
 
 .header {
   height: 80vh;
@@ -78,7 +73,6 @@ body {
   background-color: rgba(223, 223, 223, 0.4);  
   padding: 0.8rem;
   margin: 1rem 0;
- 
 }
   
 .list {
@@ -95,7 +89,6 @@ body {
   color: white;
   font-weight: 800;
   font-size: 1.7rem;
- 
 }
 
 .links:hover {
@@ -103,11 +96,8 @@ body {
   transition: .3s ease-in;
 }
 
-/* Main */
 .characteres-page{
   width: 100%;
- 
-  
 }
 
 .page-title{
@@ -120,8 +110,6 @@ body {
   
 }
 
-/* Filtros */
-
 .filter-div{
   display:flex;
   align-items:center;
@@ -131,22 +119,17 @@ body {
   margin-top: -30px;
  
 }
-
 .filter-label{
   font-size: 14px;
   color:var(--light-purple);
   margin-right: 5px;
-
 }
 
 .button-menu{
- 
   border: none;
   background-color: white;
   font-weight: bolder;
   margin-right:13%;
-  
-  
 }
 
 .button-menu img{
@@ -161,8 +144,6 @@ body {
 
 .filter{
   display:none;
-  
- 
 }
 
 .filter-active{
@@ -183,11 +164,8 @@ body {
   border: 1px solid var(--light-purple);
   color:var(--text-color);
   margin-right: 5%;
- 
-
 }
 
-/* Galeria */
 .gallery{
   width:78%;
   margin: 0 auto;
@@ -196,26 +174,18 @@ body {
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  
 }
-
-
-/* Cards personagens */
-
 
 .card {
   background-color:transparent;
   width: 170px;
   height: 280px;
-  min-width:150px;
   border: 1px solid #f1f1f1;
   perspective: 1000px; /*efeito 3D*/
   display:flex;
   margin:2%;
   
-  
 }
-
 .card-inner {
   position: relative;
   width: 100%;
@@ -224,24 +194,16 @@ body {
   transition: transform 0.8s;
   transform-style: preserve-3d;
   display:flex;
-  
- 
-  
-  
 }
 
 .card-img{
   width:100%;
   height:230px;
   object-fit:cover;
-  
 }
 
 .card:hover .card-inner {
   transform: rotateY(180deg);
-  
-  
-
 }
 
 .card-front, .card-back {
@@ -252,10 +214,7 @@ body {
   backface-visibility: hidden;
   box-shadow: 0px 0px 14px 4px rgba(100,100,100,0.7); 
   background-color: rgb(239, 241, 239);
-
 }
-
-
 
 .card-back {
   transform: rotateY(180deg);
@@ -277,16 +236,12 @@ body {
   color:var(--dark-green);
   font-size:12px;
   text-transform: uppercase;
-
-
 }
 
 .name-character{
   color:var(--dark-green);
   font-size:18px;
   margin:10px;
-  
-  
 }
 
 .item-character{
@@ -301,13 +256,10 @@ body {
  
 }
 
-/* Footer */
-
 .footer {
   background-image: linear-gradient(to bottom, #2c4515d2, rgba(78, 19, 85, 0.829)), url('./img/header.png');
   width: 100%;
   height: 20rem;
-
 }
 
 .totoros {
@@ -325,6 +277,7 @@ body {
   color: var(--light-green);
   padding: 0.5%;
 }
+
 .footer a {
   text-decoration: none;
   color: var(--light-green);
@@ -335,14 +288,11 @@ body {
   transition: .2s ease-in;
 }
 
-
-
 @media(min-width:1500px){
   :root{
     font-size:1rem;
   }
 }
-
 
 @media(max-width:1500px){
   :root{
@@ -352,24 +302,16 @@ body {
 }
 
 @media(max-width:1024px){
-
-
   .header{
     height:70vh;
     background-image: linear-gradient(to bottom, rgba(78, 19, 85, 0.829), #2c4515d2), url('./img/header-small.png'); 
   }
 }
 
-
 @media(max-width:768px){
   :root{
     font-size:0.7rem;
   }
-  /* body{
-    background-repeat:repeat-y;
-    background-size:contain;
-    background-attachment:scroll;
-  } */
 }
 
 @media(max-width:630px){
@@ -406,7 +348,6 @@ body {
     margin-left:auto;
     margin-right:auto;
     flex-direction: column;
-    
   }
 
   .filter-label{
@@ -419,23 +360,17 @@ body {
 
   .label{
     margin-top:10px;
-     
   }
-
 
   .gallery{
     flex-direction:column;
     align-items: center;
     justify-content: center;
-    
   }
   
   .card{
     margin:4%;
   }
-
-  
-  
 }
 
 @media(max-width:500px){
@@ -462,8 +397,6 @@ body {
     width: 90%;
     justify-content:space-between;
   }
-
- 
 }
 
 @media(max-width:400px){

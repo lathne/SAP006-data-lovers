@@ -15,8 +15,7 @@ fizemos uma investigação rápida (research) e essas são algumas das conclusõ
 - Studio Ghibli tem várias animações e para nossos usuários é importante
 saber quantas e quais são
 - As mentes por trás de cada animação são os diretores e produtores,
-sendo que eles podem ter contribuído
-na criação de mais de uma obra. Portanto, é importante
+sendo que eles podem ter contribuído na criação de mais de uma obra. Portanto, é importante
 para nosso usuário poder conhecê-los e saber quantas e quais são as criações
 em que eles trabalharam
 - As animações possuem informações relevantes para nossos usuários, como
