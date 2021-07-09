@@ -45,19 +45,19 @@ saber quantos e quais são
 - Os personagens têm características únicas que o usuário deseja conhecer, como
 nome, idade, sexo, espécie, etc.
 
-![História de Usuário 1](src/img/hist_usuario_alfabetica)  |  ![História de Usuário 2](src/img/hist_usuario_nota) |  ![História de Usuário 3](src/img/hist_usuario_estreia) 
+![História de Usuário 1](src/img/hist_usuario_alfabetica.png)  |  ![História de Usuário 2](src/img/hist_usuario_nota.png) |  ![História de Usuário 3](src/img/hist_usuario_estreia.png) 
 
-![História de Usuário 4](src/img/hist_usuario_diretores)  |  ![História de Usuário 5](src/img/hist_usuario_produtores) |  ![História de Usuário 6](src/img/hist_usuario_personagens) 
+![História de Usuário 4](src/img/hist_usuario_diretores.png)  |  ![História de Usuário 5](src/img/hist_usuario_produtores.png) |  ![História de Usuário 6](src/img/hist_usuario_personagens.png) 
 
 ## 3. Desenvolvimento da Interface
 
 Após a primeira análise dos dados disponíveis, percebemos que o site contaria com com cards de filmes e personagens que seriam filtrados e ordenados. A partir desta primeira ideia foi definido o protótipo de baixa fidelidade:
 
-![Protótipo de Baixa Fidelidade](src/img/prototipo-baixaf) | ![Protótipo de Baixa Fidelidade](src/img/prototipo-baixaf-mobile)
+![Protótipo de Baixa Fidelidade](src/img/prototipo-baixaf.jpg) | ![Protótipo de Baixa Fidelidade](src/img/prototipo-baixaf-mobile.jpg)
 
 Posteriormente foi decidido dividir os conteúdos em páginas diferentes. Por esse motivo o layout mudou no protótipo de alta fidelidade:
 
-![Protótipo de Alta Fidelidade - Header](src/img/prototipo-header)
+![Protótipo de Alta Fidelidade - Header](src/img/prototipo-header.png)
 
 
 Analisando os dados e pensando em abordar a Representatividade Feminina sempre retratada pelo Studio Ghibli em seus filmes, pensamos em trazer os dados para expor esse tema. Em um segundo momento através dos testes de usabilidade, foi constatado pelos usuários que os dados disponíveis não eram específicos e relevantes para esse tema específico. Por este motivo optamos por modificar o título do filme no decorrer do projeto.
@@ -65,12 +65,12 @@ Analisando os dados e pensando em abordar a Representatividade Feminina sempre r
 A página de filmes contém informações e detalhes sobre cada animação.
 
 
-![Protótipo de Alta Fidelidade - Filmes](src/img/prototipo-filmes)
+![Protótipo de Alta Fidelidade - Filmes](src/img/prototipo-filmes.png)
 
 A paleta de cores utilizada priorizou as cores verde e roxo, com ilustrações de personagens dos filmes.
 
-![Imagem que Inspirou a Escolha](src/img/base-paleta)
-![Paleta de Cores](src/img/paleta)
+![Imagem que Inspirou a Escolha](src/img/base-paleta.png)
+![Paleta de Cores](src/img/paleta.png)
 
 O layout da pagina é responsivo e focado em legibilidade com design minimalista e otimizado para dispositivos mobile.
 
