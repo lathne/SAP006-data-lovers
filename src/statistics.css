@@ -233,7 +233,7 @@ body {
 
 @media(max-width:768px){
   :root{
-    font-size:.9rem;
+    font-size:0.7rem;
   }
 
   .info {
@@ -245,12 +245,26 @@ body {
 
 @media(max-width:630px){
   :root{
-    font-size: 0.6rem;
+    font-size:0.6rem;
   }
+ 
   .header{
-    height:35vh;
-    background-image: linear-gradient(to bottom, rgba(78, 19, 85, 0.829), #2c4515d2), url('./img/header-mobile.png');
+    height:60vh;
   }
+
+  .list {
+    justify-content:space-between;
+  }
+
+  .links {
+    font-size: 2rem;
+  }
+
+  .page-title{
+    font-size:3.5rem;
+    margin-top: 5%;
+  }
+
 
   .info {
     font-size: 1.9rem;
@@ -260,6 +274,44 @@ body {
   .chart {
     width: 100%;
   }
+}
 
 
+@media(max-width:500px){
+  :root{
+    font-size: 0.5rem;
+  }
+
+  .header{
+    height:50vh;
+    background-image: linear-gradient(to bottom, rgba(78, 19, 85, 0.829), #2c4515d2), url('./img/header-small.png');
+  }
+
+  .title-container {
+    height: 70%;
+    border: 3px solid white;
+  }
+    
+  .site-title {
+    border-top: 3px solid white;
+    border-bottom: 3px solid white;
+  }
+
+  .list {
+    width: 90%;
+    justify-content:space-between;
+  }
+ 
+}
+
+@media(max-width:400px){
+  :root{
+    font-size: 0.4rem;
+  }
+
+  .header{
+    height:35vh;
+    background-image: linear-gradient(to bottom, rgba(78, 19, 85, 0.829), #2c4515d2), url('./img/header-mobile.png');
+  }
+  
 }
