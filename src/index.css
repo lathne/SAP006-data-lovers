@@ -109,7 +109,7 @@ body {
 }
 
 .titles {
-  margin: 3% 0 3% 0;
+  margin: 5% 0 3% 0;
   color: var(--light-purple);
 }
 
@@ -155,6 +155,11 @@ body {
 .btn a:hover {
   color: var(--light-purple);
   transition: .3s ease-in;
+}
+
+.btn-center {
+  display: block;
+  margin: 2% auto;
 }
 
 .footer {
