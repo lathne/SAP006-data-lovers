@@ -1,5 +1,6 @@
 # Studio Ghibli - Quebrando paradigmas
 
+O objetivo deste projeto é construir uma página web para visualizar um conjunto de dados que se adapte às necessidades do usuário. Essa página possibilita tanto visualizar como filtrar, ordenar os dados e mostrar informações relevantes através de cálculos agregados e gŕaficos.
 ## Índice
 
 - [1. Introdução ao Projeto](#1-introdução-ao-projeto)
@@ -9,10 +10,7 @@
 - [5. Conteúdos implementados no projeto](#5-conteúdos-implementados-no-projeto)
 
 ---
-
 ## 1. Introdução ao Projeto
-
-O objetivo deste projeto é construir uma página web para visualizar um conjunto de dados que se adapte às necessidades do usuário. Essa página possibilita tanto visualizar como filtrar, ordenar os dados e mostrar informações relevantes através de cálculos agregados e gŕaficos.
 
 A escolha do tema para o projeto foi o Studio Ghibli.
 
@@ -32,20 +30,15 @@ Uma História de Usuário representa em linguagem simples o que o usuário faz, 
 
 Algumas das averiguações levadas em consideração para o desenvolvimento destas histórias são:
 
-- Studio Ghibli tem várias animações e para nossos usuários é importante
-saber quantas e quais são
-- As mentes por trás de cada animação são os diretores e produtores,
-sendo que eles podem ter contribuído na criação de mais de uma obra. Portanto, é importante
-para nosso usuário poder conhecê-los e saber quantas e quais são as criações
-em que eles trabalharam
-- As animações possuem informações relevantes para nossos usuários, como
-descrição, data de lançamento, diretor, produtor e personagens
-- Cada animação tem seus personagens e para nossos usuários é importante
-saber quantos e quais são
-- Os personagens têm características únicas que o usuário deseja conhecer, como
-nome, idade, sexo, espécie, etc.
+- Studio Ghibli tem várias animações e para nossos usuários é importante saber quantas e quais são
+- As mentes por trás de cada animação são os diretores e produtores, sendo que eles podem ter contribuído na criação de mais de uma obra. Portanto, é importante
+para nosso usuário poder conhecê-los e saber quantas e quais são as criações em que eles trabalharam
+- As animações possuem informações relevantes para nossos usuários, como descrição, data de lançamento, diretor, produtor e personagens
+- Cada animação tem seus personagens e para nossos usuários é importante saber quantos e quais são
+- Os personagens têm características únicas que o usuário deseja conhecer, como nome, idade, sexo, espécie, etc.
 
 ![História de Usuário 1](src/img/montagem-historias.png)
+
 ## 3. Desenvolvimento da Interface
 
 Após a primeira análise dos dados disponíveis, percebemos que o site contaria com com cards de filmes e personagens que seriam filtrados e ordenados. A partir desta primeira ideia foi definido o protótipo de baixa fidelidade:
@@ -56,18 +49,20 @@ Posteriormente foi decidido dividir os conteúdos em páginas diferentes. Por es
 
 ![Protótipo de Alta Fidelidade - Header](src/img/prototipo-header.png)
 
+Analisando os dados e pensando em abordar a Representatividade Feminina sempre retratada pelo Studio Ghibli em seus filmes, pensamos em trazer os dados para expor esse tema. Em um segundo momento através dos testes de usabilidade, foi constatado pelos usuários que os dados disponíveis não eram relevantes para esse tema específico. Por este motivo optamos por modificar o título do filme no decorrer do projeto.
 
-Analisando os dados e pensando em abordar a Representatividade Feminina sempre retratada pelo Studio Ghibli em seus filmes, pensamos em trazer os dados para expor esse tema. Em um segundo momento através dos testes de usabilidade, foi constatado pelos usuários que os dados disponíveis não eram específicos e relevantes para esse tema específico. Por este motivo optamos por modificar o título do filme no decorrer do projeto.
-
-A página de filmes contém informações e detalhes sobre cada animação.
-
+A página de filmes contém informações e detalhes sobre cada animação:
 
 ![Protótipo de Alta Fidelidade - Filmes](src/img/prototipo-filmes.png)
 
-A paleta de cores utilizada priorizou as cores verde e roxo, com ilustrações de personagens dos filmes. A imagem a seguir foi usada como inspiração para a escolha das cores.
+A paleta de cores utilizada priorizou as cores verde e roxo, com ilustrações de personagens dos filmes.
+
+![Paleta de Cores](src/img/paleta.png)
+
+A imagem a seguir, do filme A Viagem de Chihiro, foi usada como inspiração para a escolha das cores:
 
 ![Imagem que Inspirou a Escolha](src/img/base-paleta.png) |
-![Paleta de Cores](src/img/paleta.png)
+
 
 O layout da pagina é responsivo e focado em legibilidade com design minimalista e otimizado para dispositivos móveis.
 
@@ -105,9 +100,7 @@ A princípio, a aplicação seria direcionada ao público feminino, tendo em vis
 
 ##  5. Conteúdos implementados no projeto
 
-O objetivo principal deste projeto é que aprenda a desenhar e construir uma interface web onde se possa visualizar e manipular dados, entendendo o que o usuário necessita.
-
-Em outras palavras, você aprenderá a:
+Para construir a interface desta aplicação, em que é possível visualizar e manipular dados, os conhecimentos abordados foram:
 
 ### HTML e CSS
 
