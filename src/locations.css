@@ -346,6 +346,15 @@ body {
       width: 90%;
       justify-content:space-between;
     }
+
+    .filter-label{
+      font-size:12px;
+      
+    }
+  
+    .button-menu img{
+      width:12px;
+    }
   }
   
   @media(max-width:400px){
