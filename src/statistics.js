@@ -1,4 +1,4 @@
-import { average } from './data.js';
+import { average, firstMovie } from './data.js';
 import data from './data/ghibli/ghibli.js'
 
 const films = data.films
@@ -68,13 +68,14 @@ new Chart(chartScores, {
 
 })
 
-
 const titles = (films) => {
   const printTotalFilms = document.getElementById("totalFilms")
+  const oldestMovie = firstMovie(filmYears)
+  
   printTotalFilms.innerHTML =
     `<div class="flex-item">
           <div class="box">
-              <p>Desde a década de 80 o Studio Ghibli produziu <strong class="data">${films.length}</strong> filmes</p>
+              <p>Desde <strong class="data">${oldestMovie}</strong> o Studio Ghibli produziu <strong class="data">${films.length}</strong> filmes</p>
           </div>
       </div>`
 }

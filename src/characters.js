@@ -3,9 +3,11 @@ import data from './data/ghibli/ghibli.js'
 
 const films = data.films
 
+
 const gallery = document.getElementById("gallery")
 const printPeople = (peopleList, film) => {
 
+  
   let charactersCards = ''
   peopleList.forEach(people => {
     charactersCards +=
@@ -35,8 +37,6 @@ const printPeople = (peopleList, film) => {
   })
 
   gallery.innerHTML += charactersCards
-
-
 }
 
 for (let film of films) {
@@ -50,7 +50,7 @@ const imageValidation = () => {
 
   for (let img of arrayImgs) {
     const url = img.getAttribute("src")
-    const xhr = new XMLHttpRequest();
+    const xhr = new XMLHttpRequest()
     xhr.onload = () => {
       if (xhr.status != 200) {
         img.setAttribute("src", "img/not-found2.png")

@@ -1,12 +1,17 @@
 
-export const filterData = (data, prop, name) => {
-  if (typeof data !== "object" || typeof prop !== "string" || typeof name !== "string") {
+export const filterData = (data, key, value) => {
+  if (typeof data !== "object" || typeof key !== "string" || typeof value !== "string") {
     throw new TypeError
   }
 
-  const filter = data.filter(obj => obj[prop] === name)
+  const filter = data.filter(obj => obj[key] === value)
   return filter;
 };
+
+export const newFilter = (data, valueSelected) => data.filter(obj => {
+  return obj.title === valueSelected
+});
+
 
 export const sortData = (data, sortBy, sortOrder) => {
   if (typeof data !== "object" || typeof sortBy !== "string" || typeof sortOrder !== "string") {
@@ -50,6 +55,9 @@ export const average = (data) => {
     throw new TypeError
   }
 
-  return data.reduce((acum, atual) => acum + atual, 0) / data.length
+  return data.reduce((acc, atual) => acc + atual, 0) / data.length
 }
 
+export const firstMovie = (data)  => data.reduce((prev, curr) => {
+  return prev < curr ? prev : curr
+})

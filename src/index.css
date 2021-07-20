@@ -114,7 +114,7 @@ body {
 }
 
 .sections p {
-  margin-top: 2%;
+  margin: 2% 0 3% 0;
 }
 
 .totoro {
@@ -129,20 +129,28 @@ body {
   padding: 5%;
 }
 
+.container-btns {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .btn {
-  margin: 5% 0 5% 2%;
+  margin: 5% 2% 2% 2%;
   text-align: center;
-  width: 30%;
+  width: 45%;
   outline: none;
   border: none;
   border-radius: 3px;
-  padding: 10px;
+  padding: 15px;
   background-color: var(--medium-green);
   font-size: 1.2rem;
 }
 
 .btn a {
   text-decoration: none;
+  font-size: 1.5rem;
+  font-weight: 600;
   color: white;
 }
 
@@ -238,9 +246,13 @@ body {
     padding: 5%;
   }
 
+  .container-btns{
+    flex-direction: column;
+  }
+
   .btn {
     height: 5rem;
-    width: 50%;
+    width: 60%;
     font-size: 1.4rem;
     display: block;
     margin: 2% auto;
@@ -303,6 +315,13 @@ body {
     width: 90%;
     justify-content:space-between;
   }
+  
+  .btn {
+    width: 75%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
  
 }
 
@@ -313,5 +332,9 @@ body {
   .header{
     height:35vh;
     background-image: linear-gradient(to bottom, rgba(78, 19, 85, 0.829), #2c4515d2), url('./img/header-mobile.png');
+  }
+
+  .btn{
+    width: 80%;
   }
 }

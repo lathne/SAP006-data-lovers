@@ -194,7 +194,6 @@ filter.addEventListener("change", () => {
   const optionSelected = filter.options[filter.selectedIndex]
   const optionText = optionSelected.text
   const optionClass = optionSelected.getAttribute("class")
-
   const filteredList = filterData(films, optionClass, optionText)
   printMovieList(filteredList)
   imageValidation(".character-picture")

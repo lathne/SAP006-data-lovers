@@ -120,7 +120,7 @@ body {
  
 }
 .filter-label{
-  font-size: 14px;
+  font-size: 20px;
   color:var(--light-purple);
   margin-right: 5px;
 }
@@ -133,7 +133,7 @@ body {
 }
 
 .button-menu img{
-  width:20px;
+  width:25px;
 }
 
 .button-menu:hover{
