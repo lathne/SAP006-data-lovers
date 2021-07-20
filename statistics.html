@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dados - Studio Ghibli - Quebrando paradigmas</title>
+  <link rel="stylesheet" href="./statistics.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+  <header class="header">
+    <div class="title-container">
+      <h1 class="site-title">STUDIO GHIBLI</h1>
+      <h3 class="subtitle">QUEBRANDO PARADIGMAS</h3>
+    </div>
+
+    <nav class="navbar">
+      <ul class="list">
+        <li><a class="links" href="./index.html">Início</a></li>
+        <li><a class="links" href="./movies.html">Filmes</a></li>
+        <li><a class="links" href="./characters.html">Personagens</a></li>
+        <li><a class="links" href="./locations.html">Cenários</a></li>
+        <li><a class="links" href="./statistics.html">Dados</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="main">
+
+    <section class="flex-container">
+      <div class="films info" id="totalFilms"></div>
+
+      <div class="chart films">
+        <canvas id="filmsTimeLineChart" class="flex-item"></canvas>
+      </div>
+
+    </section>
+
+    <section class="flex-container">
+
+      <div class="chart scores">
+        <canvas id="chartScores" class="flex-item"></canvas>
+      </div>
+
+      <div class="scores info" id="averageScore"></div>
+
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <img class="totoros" src="./img/totoros.png" alt="Totoros">
+    <p>Feito por <a href="https://github.com/karen-freitas" target="_blank">Karen</a> e <a
+        href="https://github.com/lathne" target="_blank">Laura</a> durante o bootcamp da <a
+        href="https://www.laboratoria.la/" target="blank">Laboratoria</a> SAP006 - 2021</p>
+  </footer>
+
+  <script src="statistics.js" type="module"></script>
+
+</body>
+
+</html>
