@@ -4,7 +4,7 @@ O objetivo deste projeto é construir uma página web para visualizar um conjunt
 
 ## Acesso
 
-[Projeto final - Site](https://)
+[Projeto final - Site](https://lathne.github.io/SAP006-data-lovers/)
 
 ## Índice
 
